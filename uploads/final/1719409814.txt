@@ -1,0 +1,360 @@
+Konsep Peka Konteks
+Widy Agung Priasmoro - Desember 2020 - Universitas Islam Indonesia
+Pada Aplikasi Bergerak
+
+Topik
+•Context 
+•Context-aware 
+•Context-awareness applications 
+•Cases
+
+Konteks
+Hey Google, Siapakah 
+“Joko”?
+GOOGLE SEARCH RESULT TAHUN 2007-2008 , JOKO: 
+SEARCH RESULT PERTAMA YANG MUNCUL : KI JOKO BODO
+
+Kalau di tahun 2020?
+
+Tahun 2020, Search Result yang muncul adalah….
+Joko dari Sinetron “Dari Jendela SMP”  
+Hmmm….
+
+Mengapa bisa begitu?
+•Google Search memiliki algoritma yang kompleks (Google RankBrain) 
+•Dipengaruhi oleh: 
+•Penggunaan kata kunci (trend) 
+•Menganalisis tingkat kepuasan user ketika menemukan hasil 
+pencarian 
+•IP based location 
+•Page ranking
+
+Apakah itu konteks?
+•Dalam bahasa latin: “Contextus” —> Connection of words (koherensi) 
+•Konteks dipengaruhi banyak hal 
+•
+
+Jadi, konteks itu apa?
+
+•Konteks #1: 
+Saya bangun tidur jam 5 pagi, kemudian mengganti pakaian dengan pakaian training, 
+setelah itu saya mengeluarkan sepeda dari garasi, dan siap-siap berangkat 
+menggunakan sepeda dengan melakukan pemanasan dahulu. 
+•Konteks #2: 
+Saya menelpon orang tuanya meminta izin untuk datang ke rumahnya bersama 
+orangtua, kemudian menelpon orang tua saya agar bisa ikut datang ke rumahnya. 
+Sayapun datang ke rumah orangtuanya bersama orang tua dan menyampaikan 
+maksud untuk melamar anaknya.
+Contoh Konteks
+
+Mengapa konteks itu penting?
+•Konteks #1: 
+Saya bangun tidur jam 5 pagi, kemudian mengganti pakaian dengan pakaian training, 
+setelah itu saya mengeluarkan sepeda dari garasi, dan setelah itu saya tidur lagi. 
+•Konteks #2: 
+Saya menelpon orang tuanya meminta izin untuk datang ke rumahnya bersama 
+orangtua, kemudian menelpon orang tua saya agar bisa ikut datang ke rumahnya. 
+Dan akhirnya sayapun lupa kalau mau datang ke rumah orangtuanya, karena sibuk 
+menyelamatkan dunia menjadi Spider-Man.
+NOOOO…..
+
+Mengapa konteks itu penting? #2
+•Konteks mempengaruhi kita dalam menerima informasi 
+•Konteks memudahkan kita mengelola informasi yang luas di sekitar kita 
+•Konteks dapat membedakan mana informasi yang penting (bagi kita) 
+mana yang tidak 
+•Konteks memandu kita di antara banyaknya informasi yang ada
+
+Pengkategorian Konteks
+Schilit, Adams and Want, di papernya “Context-Aware Computing 
+Applications”, 2014 mengkategorikan konteks sebagai berikut: 
+•Computing Context (network connectivity, bandwidth, nearby resources) 
+•User Context (User’s profile, locations, resto nearby, product on sale) 
+•Physical Context (lighting, traffic condition, temperature)
+
+Pengkategorian Konteks
+•Menerangkan pada bagian yang penting (primary context), seperti: 
+•lokasi (where),  
+•identitas (who),  
+•waktu (when), dan  
+•aktifitas (what) 
+•Pada bagian pendukung (secondary context), seperti: 
+•jarak (related to where) 
+•hubungan (related to who)
+
+Konteks
+di dalam membuat produk digital
+•Contoh Kasus: e-commerce X 
+•Fitur Login 
+•Flow yang membutuhkan Login: 
+•Joko hendak melihat status pengiriman barang, masuk ke browser, kemudian 
+mengetikan alamat e-commerce tersebut di browser. Di laman website e-commerce 
+tersebut, Joko perlu masuk ke profile lapaknya, namun dibutuhkan login. Setelah 
+Joko melakukan login, login sukses, Joko di arahkan ke profile lapaknya. Dan akhirnya 
+Joko dapat melihat status pengiriman barang. 
+•Joko membeli barang dari e-commerce X, namun Joko belum dapat melakukan 
+checkout, fitur checkout membutuhkan Login. Setelah Joko melakukan login, login 
+sukses, Jokopun akhirnya dapat melakukan checkout barang yang dipesan.
+
+Mengapa untuk fitur login yang sama, 
+terdapat 2 flow berbeda?
+
+Context-Awareness Application
+
+Apa itu
+Context 
+Awareness?
+
+Context Awareness
+•Komputer dapat bereaksi dan merasakan berdasarkan kondisi lingkungan 
+•Device (perangkat mobile) memiliki informasi yang dapat mengoperasikan suatu 
+rules 
+•Berdasarkan situasi di sekitar pengguna 
+•Rules (aturan) tertentu terjadi di konteks tertentu 
+•Past Event, Future Event 
+•Sharing Experiences 
+•Beradaptasi secara dinamis berdasarkan user’s context. 
+•Trigger secara otomatis kepada user.
+
+Context Awareness
+Mobile Applications
+
+•Context-awareness adalah kemampuan 
+aplikasi untuk merasakan dan merespon 
+ke pengguna berdasarkan data yang 
+diakses aplikasi. 
+•Data dapat dikumpulkan secara implicit 
+melalui sensor perangkat, seperti GPS, 
+Gyro, dll atau explicit berdasarkan input 
+dari pengguna. 
+•Relevansi ini tergantung pada aktifitas 
+user 
+•Contoh: baterai ponsel kurang dari 30%, 
+layar otomatis menjadi gelap.
+
+Context-aware Application
+Arsitektur
+
+Context-Aware Application
+•Menggunakan konteks untuk  
+memberitahukan pengguna  
+•maksud/tujuan mengapa 
+terjadi 
+•Didasarkan pada sensor (sensing)
+Who
+Customer 
+Shop
+Polisi HutanMasyarakat
+WhatHandphonePCHandphone
+How
+SMS / 
+Notifications 
+(Wireless)
+AlarmSMS
+WhereMallHutanAnywhere
+When
+Weekends 
+( 10:00 - 
+22:00)
+ketika ada 
+titik api
+ketika gempa 
+terjadi
+
+•Teknologi “Context-Awareness” 
+berkembang di era Smartphone 
+•Memberikan informasi yang relevan tanpa 
+pengguna harus mencari informati tersebut 
+•Konteks sebagai petunjuk 
+•Meningkatkan pengalaman pengguna 
+•mengumpulkan data dari sensor secara 
+cepat dan efisien 
+•Tidak perlu memperhatikan scheme/
+structure 
+•Tidak perlu konfirmasi ke server/client
+
+Tipe-tipe Context-Aware Application
+•Adaptive 
+•Bertindak sebagai user 
+•Biasanya bertindak dengan single-trigger 
+•Contoh:  
+•menyalakan AC ketika sampai di rumah, dan mematikan AC ketika pergi dari rumah secara otomatis 
+•Handphone otomatis silent ketika status kita diset “busy” 
+•Secara antarmuka aplikasi: perlu tampilan yang mudah dan fleksibel secara pengaturan 
+•Proactive 
+•Melibatkan user 
+•Biasanya terintegrasi dengan engine recommendation 
+•biasanya bertindak dengan multiple-trigger 
+•Contoh: 
+•Movie Recommendation, Music Recommendation 
+•Promo Produk berdasarkan produk yang sering dibeli 
+•Secara antarmuka aplikasi: tidak mengganggu, mudah di-dismiss
+
+Sensor (sensing) pada aplikasi mobile
+•Sensor penting untuk menentukan konteks 
+•Jenis-jenis sensor: 
+•Hardware Sensor: GPS, Gyro, Heart rate (IR), temperature, humidity, 
+Proximity 
+•Software Sensor: Calendar, Clock, Likes/Dislikes, History, Keyword 
+entered 
+•Mobile Devices: Sekumpulan sensor 
+•Bluetooth LE: Beacons (Nodes)
+
+Programming Logic
+•Get current user location (GPS 
+Sensor) 
+•setiap user berpindah tempat, 
+maka lokasinya tercatat di 
+sistem (secara background) 
+•Ketika dekat dengan titik 
+trigger, maka akan 
+munculkan notifikasi
+in the context-aware application
+
+Programming Logic
+•Get current time and date 
+•Di waktu tertentu, aplikasi akan 
+mengecek prakiraan cuaca, 
+keadaan traffic, dll. 
+•Misal pada waktu 
+berangkat/pulang ke kantor 
+•Misal diintegrasikan dengan 
+API dari https://
+openweathermap.org/
+in the context-aware application
+
+Smart Home (Home Automation)
+
+Case: Kebakaran Hutan
+•Sensing:  
+•Remote Sensing 
+•Satelit 
+•Image Processing 
+•Close Sensing 
+•Bisa pakai kamera di tanah dan 
+sensor temperatur/deteksi asap 
+•Image Processing 
+•Mesh Network (BLE/GPRS) 
+•Konteksnya: mencegah kebakaran hutan meluas
+
+Case: Gempa Bumi
+•Versi BMKG menggunakan 
+sensor: Seismometer 
+•Versi sederhana dengan mobile 
+app: accelerometer, mendeteksi 
+goncangan/getaran. 
+•Konteksnya: memperingatkan 
+pengguna secara cepat agar 
+pindah ke tempat yang aman 
+(evakuasi)
+
+Case: Kemacetan Lalu Lintas
+•Google Maps melacak 
+pergerakan ponsel pengguna 
+(Anonymous Data) 
+•Konteksnya: orang yang pulang 
+ke rumah atau pergi ke suatu 
+tempat
+
+Case: Banjir
+•Menggunakan sensor: 
+Ultrasonic Sensor dan Water 
+Level Sensor 
+•Konteksnya: memperingatkan 
+warga dan memcepat evakuasi
+
+Case: Olah Raga Sepeda
+•Sensor: Heart Rate dengan IR 
+atau Pulse Sensor optical. 
+•Dipasang di dada atau di 
+pergelangan tangan 
+•Dimonitoring melalui LCD di 
+sepeda atau dengan alarm 
+•Konteksnya: memperingatkan 
+pengguna untuk beristirahat
+
+Apa saja contoh Context 
+Awareness dengan Soft Sensor?
+
+•Google/Apple Photos 
+•Reminder photo 
+•Spotify/Apple Music 
+•Top Music 
+•Suggest suitable song 
+•Google Maps 
+•ETA to work/to home 
+•traffic 
+•open/closing venue 
+•fastest route 
+•Google Calendar 
+•Upcoming Event 
+•Reminder Event
+Context Awareness as a Service
+
+Apa tantangan dan apa yang harus 
+diwaspadai dari context-aware di dalam 
+aplikasi mobile?
+
+Tantangan
+•Context mismatch 
+•“Udah hari gajian nih, lagi ada sale di toko X loh” 
+•“Cuaca hari ini cerah, perjalanan ke kantor membutuhkan waktu 35 menit” 
+•Being Creepy 
+•“Besok ulang tahun Ibu, ada promo bunga dan piring cantik di Indomaret 
+seberang rumah loh” 
+•Masalah Privasi 
+•Being Annoying 
+•“AC di rumah sudah menyala”
+
+Peluang penerapan context-
+aware di Aplikasi mobile
+
+Contoh peluang
+•Retail 
+•Menawarkan produk tertentu 
+ketika pengguna sedang 
+berbelanja 
+•Menawarkan promo (misal: 
+cashback e-money tertentu) 
+untuk pengguna dengan 
+metode cashless 
+•Shopping recommendations 
+based on current context
+context-aware app
+
+Contoh peluang
+•Home Automation 
+•Berinteraksi dengan segala 
+perangkat/sistem di rumah 
+melalui sebuah aplikasi
+context-aware app
+
+Contoh peluang
+•Pariwisata 
+•Promo Tiket Pesawat di Hari 
+tertentu 
+•Promo Hotel di Hari tertentu 
+•Rekomendasi tempat wisata 
+di sekitar pengguna 
+•Halte Bus Pariwisata
+context-aware app
+
+Contoh peluang
+•Produktifitas 
+•Meningkatkan produktifitas pekerja 
+•Memberikan rekomendasi akses 
+tercepat menuju kantor 
+•Memberikan info cuaca, 
+keadaan lalu lintas, lama 
+perjalanan 
+•Memberikan info akses tercepat 
+menuju rumah ketika menjelang 
+jam kantor berakhir 
+•Memberikan info jadwal kereta 
+api
+context-aware app
+
+Selesai
+Ada Pertanyaan? !
+			=========================== Materi Lainnya ================================
+			

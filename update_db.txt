@@ -1,0 +1,7 @@
+ALTER TABLE `tb_soal_ujian`
+	CHANGE COLUMN `a` `a` TEXT NULL COLLATE 'latin1_swedish_ci' AFTER `pertanyaan`,
+	CHANGE COLUMN `b` `b` TEXT NULL COLLATE 'latin1_swedish_ci' AFTER `a`,
+	CHANGE COLUMN `c` `c` TEXT NULL COLLATE 'latin1_swedish_ci' AFTER `b`,
+	CHANGE COLUMN `d` `d` TEXT NULL COLLATE 'latin1_swedish_ci' AFTER `c`,
+	CHANGE COLUMN `e` `e` TEXT NULL COLLATE 'latin1_swedish_ci' AFTER `d`,
+	CHANGE COLUMN `kunci_jawaban` `kunci_jawaban` VARCHAR(2) NULL COLLATE 'latin1_swedish_ci' AFTER `e`;
