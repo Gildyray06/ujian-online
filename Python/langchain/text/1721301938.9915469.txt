@@ -1,0 +1,1843 @@
+IMPLEMENTASI ARTIFICIAL INTELLIGENCE PADA 
+SISTEM “UJIAN ONLINE” BERBASIS WEB 
+MENGGUNAKAN INTEGRASI OPENAI API 
+ 
+HALAMAN JUDUL 
+ 
+ 
+ 
+ 
+Disusun Oleh: 
+ 
+ 
+ N a m a 
+ NIM 
+: Moh Gildiray Thaib 
+: 20523072 
+ 
+ 
+ 
+ 
+ 
+PROGRAM STUDI INFORMATIKA – PROGRAM SARJANA 
+FAKULTAS TEKNOLOGI INDUSTRI 
+UNIVERSITAS ISLAM INDONESIA 
+2024
+
+ii 
+ 
+ii 
+ 
+HALAMAN PENGESAHAN DOSEN PEMBIMBING 
+ 
+IMPLEMENTASI ARTIFICIAL INTELLIGENCE PADA SISTEM “UJIAN ONLINE” 
+BERBASIS WEB MENGGUNAKAN INTEGRASI OPENAI API 
+ 
+TUGAS AKHIR 
+ 
+Yogyakarta, 9 Juli 2024 
+Pembimbing, 
+ 
+ 
+ 
+ 
+(Mukhammad Andri Setiawan, S.T., M.Sc., Ph.D.)  
+Disusun 
+Oleh: 
+N a 
+m a 
+NI
+: Moh Gildiray 
+Thaib 
+: 20523072
+
+iii 
+ 
+HALAMAN PENGESAHAN DOSEN PENGUJI 
+ 
+IMPLEMENTASI ARTIFICIAL INTELLIGENCE PADA 
+SISTEM “UJIAN ONLINE” BERBASIS WEB 
+MENGGUNAKAN INTEGRASI OPENAI API 
+ 
+TUGAS AKHIR 
+ 
+Telah dipertahankan di depan sidang penguji sebagai salah satu syarat untuk  
+memperoleh gelar Sarjana Komputer dari Program Studi Informatika – Program Sarjana 
+di Fakultas Teknologi Industri Universitas Islam Indonesia 
+Yogyakarta, 9 Juli 2024 
+ 
+Tim Penguji 
+_______________________ Hendrik, S.T., M.Eng. 
+Anggota 1 
+_______________________ Dr. Raden Teduh Dirgahayu, S.T., M.Sc. 
+Anggota 2 
+_______________________ Dr. Mukhammad A Setiawan, S.T., M.Sc. 
+ 
+ 
+Mengetahui, 
+Ketua Program Studi Informatika – Program Sarjana 
+Fakultas Teknologi Industri 
+Universitas Islam Indonesia 
+ 
+ 
+ 
+(Dhomas Hatta Fudholi, S.T., M.Eng., Ph.D.)
+
+iv 
+ 
+iv 
+ 
+HALAMAN PERNYATAAN KEASLIAN TUGAS AKHIR 
+ 
+ 
+Yang bertanda tangan di bawah ini: 
+Nama : Moh Gildiray Thaib 
+ NIM   : 20523072 
+ 
+Tugas akhir dengan judul: 
+IMPLEMENTASI ARTIFICIAL INTELLIGENCE PADA 
+SISTEM “UJIAN ONLINE” BERBASIS WEB MENGGUNAKAN 
+INTEGRASI OPENAI API 
+ 
+Menyatakan bahwa seluruh komponen dan isi dalam tugas akhir ini adalah hasil karya 
+saya sendiri. Apabila di kemudian hari terbukti ada beberapa bagian dari karya ini adalah 
+bukan hasil karya sendiri, tugas akhir yang diajukan sebagai hasil karya sendiri ini siap ditarik 
+kembali dan siap menanggung risiko dan konsekuensi apapun. 
+Demikian surat pernyataan ini dibuat, semoga dapat dipergunakan sebagaimana mestinya. 
+ 
+ 
+Yogyakarta, 9 Juli 2024 
+ (Moh Gildiray Thaib)
+
+v 
+ 
+HALAMAN PERSEMBAHAN 
+ 
+ 
+ 
+Alhamdulillahi Rabbil ‘Alamin. Segala puji bagi Allah Yang Maha Esa yang telah 
+memberikan karunia serta petunjuk-Nya, sehingga kita masih diberi kesempatan untuk hidup 
+dan tetap berada di jalan yang benar menurut agama Islam. Semoga shalawat serta salam 
+senantiasa tercurah kepada Nabi Muhammad shallallahu ‘alaihi wasallam, yang telah 
+membimbing umatnya menuju kehidupan yang lebih baik setelah berada dalam kegelapan. 
+Penulis berterima kasih kepada Allah Subhanahu wa Ta’ala atas segala nikmat, rahmat, dan 
+ridho-Nya yang tak pernah putus. Shalawat serta salam selalu tercurah kepada Nabi 
+Muhammad SAW, yang menjadi teladan bagi seluruh umatnya 
+Terima kasih juga kepada kedua orang tua tercinta, Bapak Syamsuri Thaib, Bersama Ibu 
+Ervina Muda, dan kedua saudara saya Moh Geraldy Thaib S.H. dan Siti Ghaitsa Hafidzah 
+Thaib, kemudia teman dekat saya Alber Derry Asher S.Kom dan Daffa Sahad Aufa dan tidak 
+lupa kepada kerabat dan sahabat yang saya tidak bisa satu persatu sebutkan. 
+Terimakasih atas doa – doa yang selalu diberikan serta dukungan material maupun mental, 
+motivasi, serta didikan yang luar biasa hebatnya. Semoga karya ini bisa menjadi bentuk bakti 
+dari seorang anak kepada orang tuanya, serta bentuk pertanggungjawaban untuk 
+menyelesaikan pendidikan Sarjana.
+
+vi 
+ 
+HALAMAN MOTO 
+ 
+“SELESAIKAN APA YANG KAMU SUDAH MULAI”
+
+vii 
+ 
+KATA PENGANTAR 
+ 
+Kata pengantar adalah bagian yang digunakan untuk menyampaikan rasa syukur atas 
+selesainya penyusunan laporan tugas akhir. Selain itu, bagian kata pengantar juga dapat 
+memuat berbagai hal sebagai berikut: 
+1. Tujuan penulisan laporan atau pelaksanaan penelitian tugas akhir. 
+2. Mengemukakan kesulitan-kesulitan (non ilmiah) yang ditemui pada saat penelitian 
+tugas akhir. 
+3. Ucapan terima kasih kepada beberapa pihak yang telah membantu atau mendukung 
+penyelesaian penulisan laporan atau pelaksanaan penelitian tugas akhir. 
+4. Harapan penulis terhadap penelitian tugas akhir yang telah diselesaikan. 
+Umumnya bagian kata pengantar ditutup dengan tanda tangan dari penulis. 
+ 
+ 	Yogyakarta, 9 Juli 2024 
+ 
+ 
+ 
+  (Moh Gildiray Thaib)
+
+viii 
+ 
+SARI 
+ 
+Penelitian ini bertujuan untuk mengimplementasikan kecerdasan buatan (Artificial 
+Intelligence/AI) dalam sistem ujian online dengan memanfaatkan OpenAI API serta 
+menerapkan metode taksonomi Bloom untuk meningkatkan efektivitas proses ujian. Dalam era 
+digital saat ini, kebutuhan akan sistem evaluasi yang lebih canggih dan adaptif menjadi 
+semakin mendesak. Taksonomi Bloom digunakan sebagai kerangka kerja untuk 
+mengembangkan soal ujian yang tidak hanya mengukur pengetahuan dasar, tetapi juga 
+kemampuan analisis, sintesis, dan evaluasi. Dengan menggunakan OpenAI API, sistem ini 
+dapat menghasilkan dan menilai soal-soal ujian secara otomatis, menawarkan feedback yang 
+komprehensif kepada peserta ujian. Hasil penelitian menunjukkan bahwa integrasi AI dalam 
+sistem ujian online dapat meningkatkan efisiensi dan keandalan evaluasi, serta memberikan 
+pengalaman belajar yang lebih interaktif dan mendalam bagi peserta ujian. Implementasi ini 
+juga mengurangi beban administratif pada pengajar dan memungkinkan penilaian yang lebih 
+objektif dan konsisten. Kesimpulannya, penerapan AI dengan taksonomi Bloom dalam sistem 
+ujian online tidak hanya meningkatkan kualitas penilaian, tetapi juga mendukung 
+pengembangan kemampuan berpikir tingkat tinggi pada peserta ujian. 
+ 
+Kata Kunci: Taksonomi Bloom, OpenAI API, AI, dan efekrivitas ujian.
+
+ix 
+ 
+GLOSARIUM 
+ 
+ 
+Artificial Intelligence Teknologi yang memungkinkan sistem komputer untuk melakukan 
+tugas yang biasanya memerlukan kecerdasan manusia, seperti 
+pengenalan suara, pembelajaran, dan pengambilan keputusan. 
+Evaluasi Proses untuk memperoleh informasi tentang kemampuan dan 
+pencapaian peserta didik dalam kaitannya dengan tujuan pembelajaran. 
+Evaluasi membantu guru menilai apakah tujuan pembelajaran telah 
+tercapai. 
+Human Error Kesalahan yang dibuat oleh manusia, seringkali disebabkan oleh 
+kelelahan, kurangnya konsentrasi, atau faktor-faktor lain yang 
+mempengaruhi kinerja.  
+Integrasi Sistem Human Error Kesalahan yang dibuat oleh manusia, seringkali 
+disebabkan oleh kelelahan, kurangnya konsentrasi, atau faktor-faktor 
+lain yang mempengaruhi kinerja.  
+Indikator Soal Kriteria atau ciri-ciri khusus yang harus ada dalam soal ujian untuk 
+memastikan soal tersebut sesuai dengan kompetensi dasar dan tujuan 
+pembelajaran. 
+Kompetensi Dasar Pengetahuan, keterampilan, dan sikap minimal yang harus dikuasai 
+oleh peserta didik sebagai hasil dari proses pembelajaran. 
+OpenAI API Antarmuka pemrograman aplikasi yang disediakan oleh OpenAI, 
+memungkinkan pengembang untuk mengakses dan menggunakan 
+teknologi AI yang dikembangkan oleh OpenAI dalam aplikasi mereka. 
+Taksonomi Bloom Kerangka klasifikasi tujuan pendidikan yang mengidentifikasi enam 
+tingkat kognitif dalam pembelajaran: menghafal, pemahaman, 
+penerapan, analisis, evaluasi, dan penciptaan.. 
+Ujian Obejektif Jenis evaluasi dengan jawaban yang telah ditentukan sebelumnya, 
+seperti pilihan ganda, benar-salah, atau mencocokkan. Ujian ini dinilai 
+berdasarkan kunci jawaban yang jelas. 
+Ujian Subjektif Jenis evaluasi di mana jawaban peserta ujian berupa uraian atau esai 
+yang memerlukan penilaian berdasarkan interpretasi dan pandangan 
+penilai.
+
+x 
+ 
+DAFTAR ISI 
+ 
+HALAMAN JUDUL ......................................................................................................... i 
+ HALAMAN PENGESAHAN DOSEN PEMBIMBING .......................................ii 
+ HALAMAN PENGESAHAN DOSEN PENGUJI .............................................. iii 
+ HALAMAN PERNYATAAN KEASLIAN TUGAS AKHIR ............................. iv 
+ HALAMAN PERSEMBAHAN ............................................................................ v 
+ HALAMAN MOTO ............................................................................................. vi 
+ KATA PENGANTAR .........................................................................................vii 
+ SARI ................................................................................................................... viii 
+ GLOSARIUM ....................................................................................................... ix 
+DAFTAR ISI .................................................................................................................... x 
+DAFTAR TABEL ........................................................................................................ xiii 
+DAFTAR GAMBAR ..................................................................................................... xiv 
+ BAB I PENDAHULUAN ...................................................................................... 1 
+1.1 Latar Belakang ....................................................................................................... 1 
+1.2 Rumusan Masalah .................................................................................................. 2 
+1.3 Batasan Masalah .................................................................................................... 3 
+1.4 Tujuan Penelitian ................................................................................................... 3 
+1.5 Manfaat Penelitian ................................................................................................. 3 
+1.6 Sistematika Penulisan ............................................................................................ 3 
+ BAB II KAJIAN PUSTAKA ................................................................................. 6 
+2.1 Landasan Teori ....................................................................................................... 6 
+2.1.1 Artificial Intelligence (AI) ....................................................................... 12 
+2.1.2 Application Programming Interface (API)............................................... 12 
+2.1.3 Metode Pengembangan Sistem XP .......................................................... 13 
+2.1.4 Metode Taksonomi Bloom ....................................................................... 14 
+2.1.5 Metode Pengujian .................................................................................... 15 
+2.2 Penelitian Yang Relevan ...................................................................................... 16 
+2.3 Kerangka Berpikir ................................................................................................ 18 
+ BAB III ANALISIS DAN PERANCANGAN .................................................... 20 
+3.1 Subbab .................................................................................................................. 14 
+3.2 FlowChart Sistem dari sistem untuk masing-masing user ................................... 21 
+3.3 Use Case Diagram ................................................................................................ 22
+
+xi 
+ 
+3.4 Activity Diagram .................................................................................................. 23 
+3.4.1 Activity Diagram Login ........................................................................... 24 
+3.4.2 Activity Diagram Kelola Data Siswa ....................................................... 24 
+3.4.3 Activity Diagram Kelola Soal Ujian ........................................................ 25 
+3.4.4 Activity Diagram Kelola Peserta Ujian.................................................... 26 
+3.4.5 Activity Diagram Hasil Ujian .................................................................. 27 
+3.4.6 Activity Diagram LogOut ........................................................................ 28 
+3.5 Sequence Diagram ............................................................................................... 28 
+3.5.1 Sequence Diagram Login ......................................................................... 29 
+3.5.2 Sequence Diagram Kelola Data Siswa ..................................................... 30 
+3.5.3 Sequence Diagram Kelola Soal Ujian ...................................................... 30 
+3.6 Penerapan Taksonomi Bloom .............................................................................. 32 
+3.6.1 Kategori C1 Mengingat (Remembering) .................................................. 32 
+3.6.2 Kategori C2 Memahami (Understanding) ............................................... 32 
+3.6.3 Kategori C3 Menerapkan (Applying) ....................................................... 33 
+3.6.4 Kategori C4 Menganalisa (Analyzing) ..................................................... 33 
+3.6.5 Kategori C5 Mengevaluasi (Evaluating) ................................................. 33 
+3.6.6 Kategori C6 Menciptakan (Creating) ...................................................... 34 
+ BAB IV HASIL DAN PEMBAHASAN ............................................................. 35 
+4.1 Hasil Implementasi .............................................................................................. 35 
+4.1.1 Implementasi Halaman Login .................................................................. 35 
+4.1.2 Implementasi Halaman Dashboard .......................................................... 35 
+4.1.3 Implementasi Halaman Kelola Materi ..................................................... 36 
+4.1.4 Implementasi Halaman Data Siswa ......................................................... 37 
+4.1.5 Implementasi Halaman Kelola Soal Ujian ............................................... 37 
+4.1.6 Implementasi Halaman Kelola Peserta Ujian .......................................... 40 
+4.1.7 Implementasi Halaman Hasil Ujian ......................................................... 42 
+4.1.8 Implementasi Halaman Ganti Password .................................................. 42 
+4.1.9 Implementasi Halaman Jadwal Ujian....................................................... 43 
+4.2 Pengujian Black Box ............................................................................................ 44 
+ BAB V PENUTUP ............................................................................................... 48 
+5.1 Kesimpulan .......................................................................................................... 48 
+5.2 Saran ..................................................................................................................... 48 
+ DAFTAR PUSTAKA .......................................................................................... 49
+
+xii 
+ 
+LAMPIRAN ................................................................................................................... 54
+
+xiii 
+ 
+DAFTAR TABEL 
+ 
+ 
+Tabel 4. 1 Rancangan Test Case .............................................................................................. 44 
+Tabel 4. 2 Hasil Pengujian ....................................................................................................... 46
+
+xiv 
+ 
+DAFTAR GAMBAR 
+ 
+ 
+Gambar 2. 1 Skema Kerangka Berpikir ................................................................................... 19 
+Gambar 3. 1 Alur Sistem yang dirancang. ............................................................................... 21 
+Gambar 3. 2 Use Case Diagram ............................................................................................... 23 
+Gambar 3. 3 Activity Diagram Login ...................................................................................... 24 
+Gambar 3. 4 Activity Diagram Kelola Data Siswa .................................................................. 24 
+Gambar 3. 5 Activity Diagram Kelola Soal Ujian ................................................................... 25 
+Gambar 3. 6 Activity Diagram Management Materi ............................................................... 26 
+Gambar 3. 7 Activity Diagram Kelola Peserta Ujian .............................................................. 26 
+Gambar 3. 8 Activity Diagram Hasil Ujian ............................................................................. 27 
+Gambar 3. 9 Activity Diagram Ganti Password ...................................................................... 27 
+Gambar 3. 10 Activity Diagram LogOut ................................................................................. 28 
+Gambar 3. 11 Sequence Diagram Login .................................................................................. 29 
+Gambar 3. 12 Sequence Diagram Data Siswa ......................................................................... 30 
+Gambar 3. 13 Sequence Diagram Kelola Soal Ujian ............................................................... 30 
+Gambar 3. 14 Sequence Diagram Hasil Ujian ......................................................................... 31 
+Gambar 4. 1 Halaman Login .................................................................................................... 35 
+Gambar 4. 2 Halaman Dashboard User Admin ....................................................................... 35 
+Gambar 4. 3 Halaman Dashboard User Siswa ......................................................................... 36 
+Gambar 4. 4 Halaman Kelola Materi ....................................................................................... 37 
+Gambar 4. 5 Halaman Data Siswa ........................................................................................... 37 
+Gambar 4. 6 Halaman Kelola Soal Ujian................................................................................. 38 
+Gambar 4. 7 Proses generate soal menggunakan AI................................................................ 38 
+Gambar 4. 8 Hasil Generate Soal ............................................................................................. 39 
+Gambar 4. 9 Tambah Soal Objektif ......................................................................................... 39 
+Gambar 4. 10 Tambah Soal Uraian.......................................................................................... 40 
+Gambar 4. 11 Halaman Kelola Peserta Ujian .......................................................................... 41 
+Gambar 4. 12 Halaman Tambah Jenis Ujian ........................................................................... 41 
+Gambar 4. 13 Halaman Hasil Ujian ......................................................................................... 42 
+Gambar 4. 14 Halaman Ganti Password .................................................................................. 42 
+Gambar 4. 15 Halaman Jadwal Ujian untuk user Siswa .......................................................... 43 
+Gambar 4. 16 Halaman Soal Ujian 1 ....................................................................................... 43
+
+xv 
+ 
+Gambar 4. 17 Halaman Soal Ujian 2 ....................................................................................... 44 
+Gambar 4. 18 Halaman Setelah Ujian...................................................................................... 44
+
+1 
+ 
+BAB I 
+PENDAHULUAN 
+ 
+ 
+1.1 Latar Belakang 
+Dalam dunia pembelajaran tentu ada yang dinamakan evaluasi hasil dari proses belajar 
+mengajar. Evaluasi ini merupakan salah satu alat yang digunakan sebagai tolak ukur untuk 
+menilai performa dari peserta didik. Penilaian ini merupakan proses untuk memperoleh 
+informasi yang berkaitan dengan tujuan dari pembelajaran. 
+Peran evaluasi dalam dunia pendidikan juga sangat penting, maka harus diusut seluk-
+beluknya dan perlu mendapat perhatian sepenuhnya. Evaluasi sendiri digunakan untuk 
+mendapatkan informasi terkait kemampuan yang dimiliki oleh siswa. Dengan adanya evaluasi 
+tersebut maka guru dapat menarik kesimpulan apakah tujuan pembelajaran yang ingin dicapai 
+telah tercapai atau belum. Fungsi penting bagi siswa dalam penilaian adalah umpan balik 
+informasi kepada siswa guna menentukan hasil belajar dari proses pembelajaran yang 
+dilakukan. Pengetahuan dan pemahaman bagaimana mencapai hasil belajar siswa akan 
+membantu guru menambah dukungan pembelajaran. Pengembalian informasi evaluasi 
+pembelajaran mempunyai fungsi sebagai berikut; guru dan siswa yang memiliki pengetahuan 
+tentang tingkat penguasaan suatu tujuan atau keterampilan dan guru mengetahui efektifitas dari 
+program pembelajaran yang dilaksanakan (Taufiq, 2015) 
+Evaluasi ini biasanya dibagi menjadi dua jenis yaitu ujian dengan penilaian subjektif dan 
+ujian (objektif). Hasil ujian subjektif biasanya dalam bentuk uraian penulisan (esai) dan untuk 
+ujian objektif berbentuk soal dengan beberapa pilihan jawaban yang telah disediakan. Ujian 
+Objektif ini pada umumnya berbentuk pilihan ganda, atau benar-salah, ataupun mencocokkan 
+/ melengkapi isian singkat (Lumbantobing, 2021). 
+Dalam penelitian ini penulis mengimplementasikan teknologi Artificiall Intelligence (AI) 
+dalam sebuah sistem yang dirancang untuk melakukan test ujian objektif serta subjektif, 
+dimana peran AI sendiri menjadi alat bantu bagi penulis untuk mendapatkan soal-soal ujian 
+yang akan digunakan oleh peserta ujian. Dimana disediakan beberapa soal yang ditampilkan 
+oleh sistem yang berlandaskan materi PDF yang sebelumnya telah diunggah user ke dalam 
+sistem yang kemudian dengan bantuan AI user akan dibantu untuk men-generate soal yang 
+akan diujikan kepada peserta ujian. Dalam pembuatan sistem ini diharapkan dapat membantu 
+dalam efisiensi waktu dalam proses pra-ujian.
+
+2 
+ 
+ Pilihan jawaban yang dibuat dalam soal objektif ini harus mengacu pada kompetensi 
+dasar dan indikator soal. Dan Pertanyaan ataupun pernyataan yang dibuat juga hendaknya 
+merupakan satu kesatuan kalimat tidak terputus dengan pilihan jawabannya. Terlebih pada 
+ujian pilihan benar-salah harus dipastikan bahwa hanya ada satu pilihan jawaban yang benar. 
+Selain itu kelemahan dalam pemberian ujian secara subjektif dimana jawaban yang diberikan 
+oleh siswa merupakan uraian dan penjelasan sehingga menyulitkan guru dalam penilaian. 
+Mufid dkk (2020), pada penelitiannya dengan studi kasus pada MAN Cimahi mengatakan 
+bahwa sejumlah 71% guru memiliki kesulitan dalam penilaian ujian dalam bentuk esai 
+dikarenakan memerlukan waktu yang lama serta tidak sedikit guru yang sulit dalam membaca 
+tulisan para siswa/siswi nya. Hal ini dapat berdampak pada kualitas penilaian yang akan 
+menurun. Juga pada ujian secara subjektif ini cukup beresiko terdapat human error pada saat 
+penilaian diakibatkan oleh guru yang kelelahan dalam pengecekan hasil ujian (Jamaluddin et 
+al., 2020).   
+Dengan beberapa pertimbangan pada pembuatan tersebut, maka penulis membuat 
+penelitian ini dengan tujuan dapat memberikan efisiensi waktu dalam pembuatan soal ujian 
+dengan menerapkan teknologi AI yang diintegrasikan dengan sistem ujian online dengan 
+bantuan OpenAI API. Penelitian ini juga dirancang dengan berdasarkan model Taksonomi 
+Bloom. Taksonomi Bloom mempunyai enam tingkatan pembelajaran dan disusun dari tingkat 
+kognitif terendah yaitu menghafal dan pemahaman, hingga tingkat kognitif tertinggi yaitu 
+penerapan, analisis, evaluasi dan penciptaan (Anderson et al., 2024).  
+Dengan latar belakang di atas, maka penelitian ini penulis berikan judul : Implementasi 
+Artificial Intelligence Pada Sistem  “Ujian Online” Berbasis Web Menggunakan Integrasi 
+OpenAI API.  
+ 
+1.2 Rumusan Masalah 
+Penelitian ini bertujuan untuk mengembangkan platform ujian online berbasis web yang 
+menggunakan AI. Studi ini akan mengeksplorasi desain dan integrasi AI untuk membuat soal 
+berdasarkan materi yang diperlukan serta evaluasi penerapannya. Selain itu, penelitian ini akan 
+mengembangkan pembelajaran sesuai tahapan Taksonomi Bloom.
+
+3 
+ 
+1.3 Batasan Masalah 
+Pada penelitian berikut ini penulis memberikan beberapa batasan pembahasan sebagai 
+berikut: 
+a. Penelitian ini hanya menggunakan OpenAI API yang akan mengintegrasikan sistem yang 
+dirancang  
+b. Penelitian ini berfokus pada implementasi AI dengan bantuan OpenAI API dalam 
+menunjang proses pencarian dan pengolahan informasi maupun data yang diinputkan yang 
+dapat dijadikan sebagai soal dalam mengukur kompetensi peserta ujian. 
+c. Aplikasi ini hanya menginformasikan, mengolah dan mengeluarkan output sesuai dengan 
+data yang telah diinputkan. 
+d. Ujian yang diterapkan dalam aplikasi yang dibangun dikhususkan pada ujian secara 
+objektif (pilihan ganda) dan subjektif (essai) 
+e. Penelitian berikut tidak membahas sampai pada proses pemeliharaan sistem 
+f. Aplikasi ini berbasis web 
+g. Platform yang dibangun berfokus pada user sebagai “Admin” dan “Peserta Ujian” 
+h. Proses pengolahan data maupun informasi dilakukan oleh OpenAI 
+i. Penelitian ini menerapkan metode pengujian Black Box untuk mengamati hasil input dan 
+output dari software  
+ 
+1.4 Tujuan Penelitian 
+Dalam penelitian ini terdapat tujuan yang ingin dicapai oleh penulis yaitu 
+mengimplementasikan AI dalam sistem Ujian Online dengan bantuan OpenAI API dengan 
+menerapkan metode taksonomi bloom yang dapat meningkatkan efektifitas proses Ujian.  
+ 
+1.5 Manfaat Penelitian 
+Manfaat penelitian ini adalah memberikan pembaca informasi terkait bagaimana AI 
+diterapkan dan diintegrasikan dalam sebuah platform “ujian online” dengan menggunakan 
+bantuan OpenAI API serta menerapkan metode pembelajaran Taksonomi Bloom. Juga melalui 
+penelitian ini diharapkan dapat meningkatkan kualitas penilaian dan pengujian dalam 
+mengakses informasi yang lebih luas, juga peningkatan dalam retensi informasi. 
+ 
+1.6 Sistematika Penulisan 
+Strukur penulisan laporan dari penelitian dijelaskan pada pembahasan dibawah ini:
+
+4 
+ 
+a. BAB I PENDAHULUAN 
+Pada bab ini berisi tentang hal-hal yang melatar belakangi penelitian ini dilakukan. 
+Adapun hal yang dibahas pada Bab ini terdiri dari; latar belakang, rumusan masalah, batasan 
+masalah, tujuan dan manfaat penelitian, serta sistematika penulisan dari penelitian ini. 
+b. BAB II KAJIAN PUSTAKA 
+Bab Tinjauan Pustaka berisi hal-hal yang melandasi penelitian ini. Pada bab ini akan 
+menjelaskan teori maupun metode yang digunakan, serta penelitian-penelitian yang relevan 
+dengan penelitian ini. Bab ini terdiri dari penjelasan mengenai pengertian ujian, ujian online, 
+sistem,  AI, pengertian API, pengertian mengenai proses pengujian objektif, serta  pengertian 
+mengenai metode pengembangan XP, penelitian terdahulu yang berkaitan dengan penggunaan 
+API, serta sedikit penjelasan dari beberapa aplikasi yang mempunyai konsep serupa dengan 
+penelitian ini. 
+c. BAB III ANALISIS DAN PERANCANGAN 
+Pada Bab ini akan menjelaskan terkait uraian metode yang digunakan dalam melakukan 
+penelitian ini. Dalam penelitian ini penulis menggunakan metode pengembangan sistem 
+Extreme Programming (XP). Metode ini banyak digunakan oleh programmer dalam 
+pengembangan aplikasi dikarenakan tidak seperti namanya yang ekstrim, namun metode ini 
+merupakan bentuk atau model pengembangan sistem yang memiliki tahapan yang simple dan 
+fleksible. Uraian tahapan tersebut pun akan dijelaskan pada bab ini sampai dengan perancangan 
+interface yang kemudian selanjutnya akan diimplementasi dan diuji coba. 
+d. BAB IV IMPLEMENTASI DAN PENGUJIAN 
+Bab berikut ini membahas penjelasan mengenai hasil dari implementasi aplikasi yang 
+sudah dilakukan pengujian. Metode yang digunakan dalam aplikasi ini berupa pengujian 
+objektif yang dimana terdapat soal-soal pilihan ganda, dan pengujian secara subjektif dimana 
+bentuk soal dan jawaban berupa uraian. Bentuk-bentuk soal tersebut digenerate dengan 
+bantuan AI dengan menerapkan model taksonomi bloom. Hasil dari pengujian aplikasi yang 
+dirancang juga akan dibahas pada bab ini. Dimana uji coba yang dilakukan merupakan proses 
+ujian yang dilakukan dalam sistem yang dibuat yang dimana akan dijelaskan dari tahap login 
+aplikasi hingga waktu ujian selesai. Termasuk di dalamnya  terdapat hasil dari pengisian soal 
+tanya jawab yang dilakukan oleh user “siswa”. 
+e. BAB V PENUTUP 
+Bab ini merupakan bab terakhir dalam sistematika penulisan dari penelitian ini. 
+Kesimpulan yang didapatkan merupakan hasil akhir yang dirangkum oleh penulis pada bab ini
+
+5 
+ 
+dari keseluruhan proses yang telah dilakukan selama melakukan penelitian ini. Serta saran yang 
+yang berisi hal-hal yang diharapkan dapat dijadikan sebagai bahan dasar bagi pembaca yang 
+nantinya akan melakukan pengembangan dari penelitian yang dilakukan oleh penulis yang 
+dimana dapat memberikan manfaat dan melengkapi kekurangan dari penelitian ini.
+
+6 
+ 
+BAB II 
+KAJIAN PUSTAKA 
+ 
+ 
+2.1 Landasan Teori 
+Bab ini menjelaskan terkait dengan landasan teori yang berhubungan dengan rumusan 
+masalah yang dijelaskan pada BAB I. Landasan teori ini berkaitan erat dengan tujuan dan 
+penyelesaian masalah. Beberapa landasan maupun acuan teori yang penulis dicantumkan pada 
+bab ini diantaranya adalah sebagai berikut. 
+ 
+2.2 Ujian  
+Ujian merupakan salah satu bentuk evaluasi yang digunakan untuk mengevaluasi capaian 
+pembelajaran yang diberikan guru kepada siswa. Tes dapat dilakukan dalam berbagai format, 
+termasuk tes pilihan ganda, esai, tes lisan, dan tugas praktis. Ujian berfungsi tidak hanya untuk 
+menilai pemahaman dan keterampilan siswa terhadap materi pelajaran, tetapi juga untuk 
+mengidentifikasi area di mana siswa mungkin memerlukan bantuan tambahan. Evaluasi ini 
+penting untuk memastikan bahwa tujuan pembelajaran telah tercapai dan untuk memberikan 
+umpan balik konstruktif kepada siswa. Selain itu, ujian juga bisa digunakan untuk menilai 
+efektivitas metode pengajaran yang digunakan oleh guru, serta untuk menetapkan standar dan 
+memberikan motivasi bagi siswa untuk belajar lebih giat. Ujian juga bisa bervariasi dalam hal 
+format dan tingkat kesulitan, tergantung pada filosofi pendidikan yang diadopsi oleh institusi 
+atau guru, materi yang diajarkan, dan kebijakan yang berlaku di lembaga pendidikan tersebut 
+ 
+2.3 Sistem ujian Online  
+Sistem ujian online adalah sebuah sistem terintegrasi untuk menyediakan dan 
+mengadakan ujian secara lebih cepat dan efektif sehingga dapat diketahui mutunya. Sistem ini 
+memanfaatkan perangkat keras dan perangkat lunak komputer, prosedur manual, dan basis data 
+untuk menyelenggarakan proses ujian. Dengan sistem ini, institusi pendidikan dapat 
+menghemat waktu dan sumber daya yang biasanya diperlukan untuk menyiapkan dan 
+mengelola ujian tradisional. Ujian online memungkinkan pengawasan otomatis terhadap 
+peserta ujian, penilaian otomatis untuk jenis soal tertentu, dan analisis data hasil ujian secara 
+lebih mendalam dan cepat.
+
+7 
+ 
+Selain itu, sistem ujian online dapat meningkatkan aksesibilitas ujian bagi siswa yang 
+berada di lokasi yang jauh atau memiliki keterbatasan fisik yang menghalangi mereka untuk 
+mengikuti ujian secara langsung. Sistem ini juga menyediakan fleksibilitas waktu bagi peserta 
+ujian, memungkinkan mereka untuk mengikuti ujian pada waktu yang paling sesuai dengan 
+jadwal mereka. Dengan adanya berbagai fitur seperti proctoring online, pengawasan berbasis 
+kamera, dan deteksi plagiarisme, sistem ini juga dapat meningkatkan integritas dan kejujuran 
+dalam pelaksanaan ujian. 
+Lebih lanjut, basis data yang digunakan dalam sistem ujian online memungkinkan 
+penyimpanan dan pengelolaan data ujian secara terstruktur, sehingga memudahkan proses 
+pelaporan dan analisis hasil ujian untuk perbaikan proses pembelajaran di masa mendatang. 
+Dalam jangka panjang, implementasi sistem ujian online dapat berkontribusi pada peningkatan 
+kualitas pendidikan dengan menyediakan alat evaluasi yang lebih akurat, efisien, dan 
+berkeadilan bagi semua peserta didik. 
+ 
+2.4 Prinsip Dasar Sistem 
+Terdapat dua metode yang umum digunakan untuk mendefinisikan sistem: satu 
+kelompok lebih mengutamakan proses, sementara kelompok lainnya lebih fokus pada 
+komponen atau bagian-bagian penyusunnya (Sutabri, 2012). Sutabri menyatakan bahwa 
+pendekatan berbasis proses melihat sistem sebagai jaringan proses yang saling terkait yang 
+bekerja bersama untuk mencapai tugas atau tujuan tertentu. Sebaliknya, pendekatan berbasis 
+komponen mendefinisikan sistem sebagai kumpulan bagian yang saling berinteraksi untuk 
+mencapai tujuan bersama. Meskipun kedua definisi tersebut sama-sama valid, cara pendekatan 
+mereka secara mendasar berbeda namun tidak saling bertentangan. 
+ 
+2.5 Definisi Sistem 
+Secara singkat, sistem adalah kumpulan elemen, variabel, atau bagian yang disusun 
+dengan cara yang sistematis, saling berkomunikasi secara bermanfaat, serta saling 
+mempengaruhi dan memperkuat (Sutabri, 2012). Kenneth Boulding dikenal sebagai 
+pengembang teori sistem, yang menekankan pentingnya mempertimbangkan setiap komponen 
+dalam suatu sistem. Sutabri menyatakan bahwa seringkali seorang pemimpin organisasi terlalu 
+fokus pada satu aspek tertentu dari struktur organisasi. Menurut teori sistem, setiap komponen 
+dalam organisasi memiliki peranan penting yang harus diperhatikan agar manajer dapat bekerja 
+lebih efisien. Komponen atau elemen dalam sistem tidak hanya meliputi karakteristik nyata,
+
+8 
+ 
+tetapi juga elemen abstrak atau konseptual seperti pekerjaan, aktivitas, pengelompokan 
+informal, misi, dan sebagainya. 
+Bergantung pada jenis sistemnya, sistem yang berbeda memiliki tujuan mendasar yang 
+berbeda pula. Misalnya, sistem ekologi yang rumit berfungsi untuk menjaga keseimbangan 
+ekologis dan memungkinkan interaksi harmonis antara flora dan fauna dalam ekosistem hutan. 
+Sebaliknya, sistem produksi film adalah struktur yang digunakan dalam industri film dengan 
+tujuan menghasilkan karya seni audiovisual yang menarik dan menghibur. Proses tersebut 
+mencakup perencanaan, pengambilan gambar, dan penyuntingan untuk menciptakan 
+pengalaman sinematik yang memukau bagi penonton. 
+Contoh lain adalah sistem dalam konteks layanan kesehatan, seperti sistem manajemen 
+rekam medis. Sistem ini bertujuan untuk menyimpan dan mengatur data medis pasien, 
+memastikan akses yang efisien bagi perawat, dokter, dan tenaga kesehatan lainnya. Input dalam 
+sistem ini meliputi informasi medis pasien, prosesnya mencakup penyimpanan data dan 
+pembaruan riwayat kesehatan, dan outputnya adalah akses cepat dan akurat terhadap informasi 
+medis yang diperlukan oleh para profesional kesehatan. 
+Input, proses, dan output adalah tiga komponen utama yang membentuk suatu sistem 
+informasi, seperti yang ditampilkan dalam grafik. Untuk menghasilkan informasi yang 
+dibutuhkan, sistem informasi harus terlebih dahulu mengumpulkan data yang relevan. Proses 
+pengolahan data adalah metode yang digunakan untuk mengubah data menjadi informasi, dan 
+informasi yang dihasilkan dari pengolahan data ini disebut sebagai keluaran. 
+ 
+2.6 Unsur Sistem 
+Menurut Muda (2017), sebuah sistem yang dirancang untuk mencapai tujuan tertentu 
+harus memenuhi berbagai persyaratan dasar yang diakui. Berikut adalah penjelasan mengenai 
+atribut-atribut sistem tersebut. Komponen sistem meliputi: input, output, unit proses, tujuan, 
+sasaran, batas, lingkungan eksternal sistem, antarmuka, serta batas internal dan eksternal 
+sistem. 
+a. Komponen Sistem 
+Sebuah sistem terdiri dari berbagai bagian yang bekerja bersama untuk membentuk 
+keseluruhan yang kohesif. Dalam suatu sistem, dapat terdapat subsistem yang memiliki kualitas 
+sistem tersendiri dan mempengaruhi proses utama sistem serta menjalankan tugas-tugas 
+spesifik. Suatu sistem juga dapat menjadi bagian dari suprasistem, yaitu sistem yang lebih besar
+
+9 
+ 
+(Muda, 2017). Jika ada sistem yang lebih besar dari suprasistem tersebut, maka disebut sebagai 
+suprasistem dari suprasistem, dan seterusnya. 
+b. Batas Sistem   
+Batas sistem adalah garis yang memisahkan sistem dari lingkungan eksternalnya atau 
+dari sistem lain. Batas-batas ini memungkinkan kita untuk melihat sistem sebagai suatu 
+kesatuan yang terdefinisi dengan jelas. Batas sistem menentukan sejauh mana sistem tersebut 
+beroperasi. 
+c. Lingkungan Eksternal Sistem 
+Segala sesuatu yang berada di luar batas sistem dan mempengaruhi fungsinya, baik 
+secara positif maupun negatif, disebut sebagai lingkungan eksternal sistem. Lingkungan 
+eksternal yang mendukung sistem dianggap sebagai sumber energi yang memerlukan 
+pemeliharaan berkelanjutan. Sebaliknya, lingkungan eksternal yang merugikan sistem 
+merupakan ancaman yang harus dihadapi dan dikelola. 
+d. Antarmuka Sistem 
+Antarmuka sistem berfungsi sebagai penghubung antara dua subsistem. Melalui 
+antarmuka ini, output dari satu subsistem menjadi input untuk subsistem lainnya. Antarmuka 
+memungkinkan integrasi antara subsistem untuk membentuk suatu kesatuan yang kohesif. 
+ 
+ 
+Gambar 2. 1 Antarmuka sistem
+
+10 
+ 
+1. Input Sistem, merupakan energi yang dimasukkan ke dalam sistem dan menjadi 
+fondasi pertama bagi sistem tersebut. Input dapat dikategorikan sebagai sinyal (input 
+sinyal) atau pemeliharaan (input pemeliharaan) berdasarkan sifatnya. Input 
+pemeliharaan bertindak sebagai energi yang digunakan untuk mengoperasikan sistem. 
+Sementara itu, energi yang digunakan untuk menghasilkan output disebut sebagai 
+sinyal input. Dalam sistem komputer, misalnya, program adalah sinyal input yang 
+digunakan untuk menjalankan komputer, sedangkan data adalah sinyal input yang 
+digunakan untuk mengubah data menjadi informasi. 
+2.  Output sistem, adalah hasil yang dihasilkan oleh sistem dan dapat dikategorikan 
+sebagai keluaran yang berguna atau limbah. Output yang berguna dapat digunakan 
+sebagai input untuk berbagai subsistem atau suprasistem lainnya. Dalam sistem 
+komputer, misalnya, output yang dihasilkan termasuk limbah dari proses produksi, 
+sementara output yang diinginkan adalah informasi. 
+3. Unit Pemrosesan Sistem, Sistem dapat dilengkapi dengan unit atau sistem pemrosesan 
+independen yang bertugas mengubah input menjadi output. Dalam sistem produksi, 
+prosesor mengubah input seperti bahan baku menjadi output berupa produk jadi. 
+Contoh lainnya adalah sistem akuntansi yang mengubah data transaksi menjadi 
+laporan keuangan dan informasi lain yang diperlukan oleh manajemen. 
+4. Tujuan Sistem, Setiap sistem memerlukan tujuan atau sasaran; tanpa tujuan, sistem 
+tidak memiliki nilai. Efektivitas suatu sistem diukur berdasarkan seberapa baik sistem 
+tersebut mencapai tujuan atau sasarannya. 
+ 
+2.6.1 Klasifikasi Sistem 
+Karena sistem memiliki tujuan yang berbeda untuk setiap situasi yang muncul di 
+dalamnya, sistem tersebut adalah integrasi dari beberapa komponen. Oleh karena itu, sistem 
+dapat dikategorikan dari berbagai sudut pandang, termasuk sistem abstrak, sistem alami, sistem 
+deterministik, sistem terbuka, dan sistem tertutup (Muda, 2017). 
+a. Sistem Abstrak dan Sistem Fisik 
+Sistem abstrak adalah sistem teoretis yang menggabungkan pemikiran, seperti hubungan 
+antara manusia dan Tuhan. Sistem abstrak juga bisa berupa ide atau konsep. Sebaliknya, sistem 
+fisik adalah sistem yang dapat dilihat secara langsung, seperti komputer, sistem pendidikan, 
+sistem keuangan, dan sistem transportasi.
+
+11 
+ 
+b. Sistem Deterministik dan Sistem Probabilistik 
+Sistem deterministik adalah sistem yang fungsinya dapat diprediksi secara akurat, seperti 
+sistem komputer. Sebaliknya, sistem probabilistik, seperti cuaca dan pasar saham, adalah 
+sistem yang nilai tepatnya pada waktu tertentu tidak dapat dipastikan dengan pasti. Akibatnya, 
+sistem probabilistik tidak dapat diprediksi dengan kepastian, berbeda dengan sistem 
+deterministik yang memberikan hasil yang konsisten dan dapat diulang. 
+ 
+c. Sistem Tertutup dan Sistem Terbuka 
+Sistem tertutup berfungsi secara mandiri tanpa intervensi luar dan tidak memiliki 
+hubungan atau dampak terhadap lingkungan eksternalnya. Walaupun secara teoretis mungkin 
+ada sistem yang sepenuhnya tertutup, dalam praktiknya, hanya ada sistem yang cukup tertutup. 
+Sebaliknya, sistem terbuka terlibat dalam interaksi eksternal yang dipengaruhi oleh 
+lingkungan. Sistem ini menerima input dan menghasilkan output untuk subsistem lain atau 
+dunia luar. Karena sistem terbuka dipengaruhi oleh lingkungannya, sistem kontrol yang efisien 
+diperlukan. Sistem yang relatif tertutup biasanya merupakan karakteristik dari sistem yang baik 
+karena mereka beroperasi secara otomatis dan hanya rentan terhadap dampak yang konstruktif. 
+Klasifikasi sistem terbuka dan tertutup dapat dijelaskan sebagai berikut: 
+ 
+ 
+d. Sistem Alami dan Sistem Buatan Manusia 
+Sistem alami adalah sistem yang terbentuk secara alami, seperti tata surya dan ekosistem 
+hutan. Sebaliknya, sistem buatan manusia adalah sistem yang dibuat dan dibangun oleh 
+manusia, seperti sistem komputer dan jaringan transportasi. Sistem alami biasanya berkembang 
+melalui proses alamiah tanpa campur tangan manusia, sementara sistem buatan manusia 
+dirancang dengan tujuan tertentu dan melalui proses rekayasa.
+
+12 
+ 
+ 
+e. Sistem Dasar dan Sistem Kompleks 
+Berdasarkan tingkat kompleksitasnya, sistem dapat dibagi menjadi dua kategori: sistem 
+dasar dan sistem kompleks. Sepeda adalah contoh dari sistem dasar dengan tingkat 
+kompleksitas yang sederhana. Di sisi lain, sistem kompleks, seperti otak manusia, memiliki 
+koneksi yang lebih rumit antara komponen-komponennya sehingga menjadi lebih rumit. 
+Sistem informasi adalah kerangka kerja dalam organisasi yang menggabungkan operasi 
+strategis untuk menghasilkan laporan yang dibutuhkan oleh pihak luar dengan persyaratan 
+pemrosesan transaksi sehari-hari untuk mendukung tugas manajemen (Sutabri, 2012). 
+ 
+2.7 Artificial Intelligence (AI) 
+Pengertian dari Artificial Intelligence (AI) atau yang dikenal sebagai kecerdasan buatan 
+ini memiliki arti yang cukup luas, singkatnya, AI merupakan salah satu bidang dalam dunia 
+komputasi yang diciptakan agar dapat berfungsi sebagai sesuatu yang mampu berpikir 
+layaknya cara berpikir manusia (Serdianus & Saputra, 2023). Dengan kemampuan tersebut, AI 
+sendiri sangat digunakan dalam dunia Pendidikan di era kini, contoh penggunaanya adalah 
+sebagai; voice assistant, pembelajaran interaktif, mentor virtual, kelas pintar (smart class 
+room)¸ dan lain sebagainya (Shidiq, 2023). 
+ 
+2.8 Application Programming Interface (API) 
+Application Programming Interface (API) merupakan penghubung antara satu aplikasi 
+dan aplikasi lainnya. Interface pada API ini diartikan sebagai perangkat lunak yang memiliki 
+fungsi yang berbeda, dimana dua aplikasi ini saling “berkomunikasi” dengan menggunakan 
+permintaan (request) dan respon (response). Sehingga dokumentasi dari API ini berisi 
+informasi dari programmer membentuk atau menyusun permintaan dan respon tersebut. 
+Dalam kata lain, API ini merupakan dokumentasi yang terdiri dari fungsi, kelas, struktur, 
+interface atau antar muka dan sebagainya yang memudahkan programmer untuk 
+mengintegrasikan software satu dan software lainnya (Irian & Yudhistira, 2021). Contoh yang 
+sering ditemukan dalam implementasi API ini adalah pada saat user melakukan login pada 
+aplikasi e-commerce (contoh; TokoPedia, Shoppe, BliBli, etc) terdapat pilihan untuk login 
+menggunakan akun Google, sehingga mempermudah user dalam melakukan aktivitas 
+selanjutnya. Dimana terjadi integrasi antara Aplikasi e-commerce tersebut dengan Google 
+dalam hal sinkronisasi akun.
+
+13 
+ 
+ 
+2.9 Metode Pengembangan Sistem XP 
+Pada penlitian ini penulis menggunakan metode pengembangan sistem Extremme 
+Programming (XP). XP merupakan salah satu model pengembangan software atau sistem yang 
+banyak digunakan oleh programmer. Tidak seperti namanya yang ekstrim, metode ini banyak 
+dipilih karena memiliki tahapan yang cukup sederhana sehingga menjadikan sistem yang 
+dirancang menjadi simple, efisien, dan fleksible (Septiani & Habibie, 2022). 
+Pada penelitian ini penulis memilih menggunakan metode XP dikarenakan metode ini 
+memiliki pendekatan yang iteratif dan ikremental serta kemampuan dalam beradaptasi akan 
+perubahan sesuai dengan kebutuhan. Dimana, tentu selama proses penelitian ini penulis 
+mengalami dan menghadapi beberapa perubahan mulai dari model aplikasi, alur sistem sampai 
+dengan output yang diinginkan. Selain itu, dalam manajemen projek, metode XP banyak 
+digunakan untuk projek yang fleksibel dengan rentang waktu lebih singkat sehingga perubahan 
+dapat diakomodir pada iterasi selanjutnya. Beberapa hal yang dijelaskan sebelumnya menjadi 
+alasan bagi penulis untuk menggunakan metode agile XP berikut dalam pennyusunan skripsi 
+ini. 
+ 
+2.10  Pengertian Taksonomi 
+Kata "taksonomi" berasal dari bahasa Yunani, yaitu "tassein" yang berarti mengklasifikasi 
+dan "nomos" yang berarti aturan. Taksonomi dapat didefinisikan sebagai klasifikasi berjenjang 
+dari sesuatu, atau prinsip yang mendasari klasifikasi tersebut (Mahmudi dkk., 2022). 
+Taksonomi pada tingkat yang lebih tinggi bersifat lebih umum, sementara pada tingkat yang 
+lebih rendah bersifat lebih spesifik. Segala sesuatu yang bergerak, benda mati, tempat, dan 
+kejadian, hingga kemampuan berpikir, dapat diklasifikasikan menurut berbagai skema 
+taksonomi. 
+ 
+2.11 Hubungan Taksonomi Bloom 
+Taksonomi dalam pendidikan dikenal sebagai "Taksonomi Bloom", yang pertama kali 
+dikembangkan oleh Benjamin S. Bloom dan rekan-rekannya. Dalam pendidikan, taksonomi ini 
+digunakan untuk mengklasifikasikan tujuan pendidikan ke dalam beberapa domain: kognitif, 
+afektif, dan psikomotor. Setiap domain dibagi lagi menjadi beberapa kategori dan subkategori 
+yang disusun secara hierarkis, mulai dari perilaku sederhana hingga yang paling kompleks. 
+Perilaku pada setiap tingkatan diasumsikan mencakup perilaku dari tingkat yang lebih rendah.
+
+14 
+ 
+ 
+2.12  Taksonomi Digital terhadap Taksonomi Bloom 
+Bloom’s Digital Taxonomy (BDT) pertama kali diperkenalkan oleh Andrew Churches 
+pada tahun 2008. BDT terdiri dari enam tingkatan yang diurutkan berdasarkan tingkat 
+kesulitan, mulai dari yang termudah hingga yang tersulit: Mengingat, Memahami, 
+Menerapkan, Menganalisis, Mengevaluasi, dan Menciptakan. Taksonomi digital ini dirancang 
+untuk menjadi tujuan pembelajaran dalam konteks yang diperkaya teknologi, dengan instruksi 
+tentang cara mempraktikkan keterampilan tertentu untuk mencapai potensi maksimal. Setiap 
+tingkat dalam taksonomi ini didukung oleh daftar keterampilan berpikir yang luas dan 
+disesuaikan dengan lingkungan belajar yang diperkaya teknologi. 
+ 
+2.13 Metode Taksonomi Bloom 
+Taksonomi Bloom adalah tingkatan dalam mengidentifikasi siswa, dari tingkat dasar 
+hingga tingkat tertinggi. Taksonomi Bloom adalah alat yang sangat berguna yang 
+memungkinkan pendidik merancang, mengimplementasikan mengevaluasi pembelajaran 
+dengan lebih efektif. Dengan memahami perbedaan tingkatan dalam ranah kognitif, dan 
+psikomotorik, pendidik dapat menciptakan lingkungan belajar yang mendorong siswa untuk 
+mengembangkan tidak hanya pengetahuan, tetapi juga keterampilan berpikir kritis dan kreatif 
+(Effendi, 2017). 
+ 
+Taksonomi Bloom sendiri merupakan suatu klasifikasi berdasarkan urutan keterampilan 
+berpikir dalam suatu proses yang semakin lama akan semakin tinggi tingkatannya yang dimana 
+terbagi atas 3 ranah yaitu: 
+1. Ranah Kognitif (Cognitive Domain) yaitu menekankan aspek intelektual, seperti 
+pengetahuan, pengertian, dan keterampilan berpikir. 
+2. Ranah Afektif (Affective Domain) berisi perilaku-perilaku yang menekankan aspek 
+perasaan dan emosi, seperti minat, sikap, apresiasi, dan cara penyesuaian diri. 
+3. Ranah Psikomotor (Psychomotor Domain) berisi perilaku-perilaku yang menekankan 
+aspek keterampilan motoric seperti tulisan tangan, mengetik, berenang, dan 
+mengoperasikan mesin. (Anderson et al., 2024). 
+Taksonomi digital diusulkan sebagai tujuan pembelajaran dalam konteks yang diperkaya 
+dengan teknologi, serta memberikan panduan tentang cara mempraktikkan keterampilan 
+tertentu untuk mencapai potensi penuh. Setiap tingkat dalam taksonomi ini didukung oleh
+
+15 
+ 
+daftar keterampilan berpikir yang komprehensif dan disesuaikan dengan lingkungan 
+pembelajaran yang ditingkatkan oleh teknologi. Pendekatan ini dapat membuat proses 
+pembelajaran lebih menyenangkan dan menarik (Sumartini et al., 2022). 
+ 
+2.13.1 Metode Pengujian 
+Pengujian merupakan proses normal, natural, dan sangat lumrah dilaksanakan pada dunia 
+pendidikan baik disengaja maupun tidak sengaja. Pengujian yang dilakukan dalam dunia 
+pendidikan sendiri diharapkan dapat dipertanggung jawabkan secara akademik maupun non 
+akademik, transparansi dan logis dalam pengukuran hasil pengujian. Dalam pelaksanaan ujian 
+ini pun tidak hanya alat yang digunakan sebagai pengujian, namun penilaian juga memiliki 
+sebuah alat ukur yang biasa disebut sebagai instrumen penilaian (Arthur et al., 2009). 
+ 
+a. Pengujian Objektif 
+Penilaian tertulis secara objektif merupakan ujian yang menilai hasil dari jawaban secara 
+objektif. Pengujian ini dibagi menjadi beberapa bentuk diantaranya; jawaban benar-salah, 
+pilihan ganda, mencocokkan, melengkapi atau isian singkat. Bentuk soal ujian objektif ini 
+disusun sedemikian rupa yang dimana telah disediakan beberapa pilihan alternatif jawaban dan 
+satu jawaban yang benar. Ujian objektif ini sering kali digunakan untuk pada bagian sain dan 
+teknologi maupun bidang sosial yang dimana sudah ada jawaban pasti dan pilihan jawaban 
+pengecoh yang juga relevan dengan soal nya. Ujian objektif dengan bentuk jawaban benar-
+salah memiliki beberapa kelebihan yaitu: 
+1. Cara penilaian yang dapat dilakukan dengan cepat, mudah dan objektif dikarenakan 
+jawaban benar yang diberikan oleh peserta ujian sudah pasti seragam. 
+2. Ujian ini dapat digunakan untuk menilai kemampuan peserta ujian dalam berbagai 
+jenjang kemampuan kognitif. 
+3. Soal ujian dapat digunakan secara berulang. 
+4. Bentuk ujian objektif ini dapat digunakan pada ujian dengan peserta yang cukup 
+banyak atau bersifat massal dan hasilnya harus segera diinformasikan atau 
+diumumkan. Contoh ujian ini seperti; Ujian Tengah Semester, Ujian Akhir Semester, 
+Ujian Calon Pegawai Negeri Sipil, dan lainnya (Arthur et al., 2009). 
+b. Pengujian Subjektif 
+Ujian terbagi menjadi dua jenis, yaitu ujian subjektif dan ujian objektif. Ujian subjektif 
+biasanya berbentuk esai. Esai merupakan jenis tes untuk mengukur kemajuan belajar yang
+
+16 
+ 
+memerlukan jawaban berupa penjelasan atau uraian kata-kata. Tes yang berupa esai atau 
+uraian, terdiri dari pertanyaan terstruktur yang mengharuskan peserta untuk menyusun dan 
+mengorganisasi jawaban dengan kata-kata mereka sendiri (Jamaluddin et al., 2020). Tes uraian 
+ini dapat dibagi menjadi dua jenis: tes uraian terbatas dan tes uraian bebas. Ada beberapa 
+contoh bentuk soal pada tes uraian ini, diantaranya: 
+1. Ujian Melengkapi, Pada tes ini peserta diberikan soal dimana diharuskan menjawab 
+soal tersebut dengan bentuk respon kata atau frasa singkat. Contoh bentuk soal dalam 
+ujian melengkapi ini adalah “Bacalah dengan seksama! Lengkapi kata-kata berikut 
+dengan baik dan benar”. 
+2. Ujian Uraian, Soal bentuk uraian adalah jenis soal yang meminta siswa untuk 
+mengingat dan mengorganisasi ide atau materi yang telah dipelajari, lalu 
+menyampaikan atau mengekspresikannya dalam bentuk tulisan. Pertanyaan ini 
+mengharuskan siswa memberikan jawaban dengan konsep atau pengertian tertentu, 
+memungkinkan penilaian yang objektif. Namun, karena jawaban berdasarkan 
+pemahaman individu, penilaiannya menjadi sulit dilakukan secara objektif 
+(Lumbantobing, 2021). 
+ 
+2.14 Penelitian Yang Relevan 
+Dalam melakukan penelitian ini, penulis melakukan research dan memahami terlebih 
+dahulu penelitian yang sudah pernah dilakukan sebelumnya yang berkaitan dengan topik pada 
+tugas akhir berikut. Journal,  maupun hasil penelitian yang sebelumnya penulis jadikan sebagai 
+referensi dan acuan dalam penulisan tugas akhir ini, termasuk didalamnya metode dan hasil 
+analisis penerapannya. Berikut ini beberapa penelitian yang penulis cantumkan dan jadikan 
+sebagai rujukan untuk mendukung penelitian ini. 
+Pada penelitian yang dilakukan oleh Serdianus dan Tjendanawangi dalam penelitian 
+berjudul “Peran Artificial Intelligence ChatGPT Dalam Perencanaan Pembelajaran Di Era 
+Revolusi Industri 4.0” ini memberikan salah satu alternatif dalam perancangan pembelajaran 
+hingga instrumen dalam penilaian. Dimana penelitian ini menganalisis dua prompt berbeda dan 
+hasilnya adalah efektifitas dari aplikasi Chat GPT yang diterapkan pada prompt satu mampu 
+menghasilkan RPP dan instrumen penilaian kurang dari 5 menit dan prompt yang kedua kurang 
+dari 2 menit. Sehingga didapatkan kesimpulan bahwa penggunaan media seperti Chat GPT ini 
+mampu menunjang efisiensi akademik (Serdianus & Saputra, 2023)
+
+17 
+ 
+Selanjutnya, journal yang menjadi acuan dari penelitian ini yaitu Implementasi Natural 
+Language Processing Dalam Pengukuran Ketepatan Ejaan Yang Disempurnakan (Eyd) Pada 
+Abstrak Skripsi Menggunakan Algoritma Fuzzy Logic yang dilakukan oleh Nisa Kurniasih, 
+dkk. Dimana penelitian ini mengidentifikasi dan menghitung jumlah kesalahan penulisan huruf 
+kapital/ kata dan tanda bacanya yang tidak sesuai dengan ejaan yang disempurnakan (EYD). 
+Metode yang digunakan sebagai alat ukur dalam penelitian ini adalah metode fuzzy logic 
+Tsukamoto. Uraian tahapan dari metode ini yaitu; fuzzifikasi, pembentukan rule, mesin 
+inferensi, dan defuzzifikasi. Dan data yang digunakan dalam penelitian ini berjumlah 31.759 
+kata yang dimana sebagian besar kata tersebut diambil dari KBBI (Kamus Besar Bahasa 
+Indonesia). Aplikasi yang dirancang oleh peneliti merupakan aplikasi berbasis website yang 
+dimana aplikasi ini mengimplementasikan NLP dengan menggunakan tools PHP dan database 
+MySQL untuk mengidentifikasi seberapa banyak kesalahan penulisan yang terjadi dari data 
+yang digunakan. Dan berdasarkan pengujian yang dilakukan, dengan mengimplementasikan 
+teknologi NLP dalam menguji sebanyak 20 abstrak skripsi, persentase hasil identifikasi yaitu 
+sebesar 70% sesuai dengan hasil identifikasi secara manual. Dan dapat disimpulkan bahwa, 
+penerapan NLP dalam teknologi komputasi cukup menunjang beberapa aspek dalam hal ini 
+dalam bidang pembelajaran (Wangsanegara & Subaeki, 2015) 
+Penelitian selanjutnya adalah penelitian yang dilakukan oleh (Palasara et al., 2019) 
+dengan judul penelitian Penerapan Metode Waterfall pada Sistem Informasi Ujian Online 
+Berbasis Web. Dalam jurnal ini menggunakan metode waterfall dalam pembuatan sistem ujian 
+online yang mempunyai studi kasus dimana pada model ujian konvensional yang masih 
+terpusat pada guru dan berfokus pada penggunaan kertas dan ATK yang menyebabkan 
+keterbatasan waktu serta biaya ekstra yang dikeluarkan. Dengan adanya sistem ujian online 
+berikut maka diharapkan dapat meminimalisir permasalah yang ada sehingga dapat 
+mengurangi penggunaan media kertas dan biaya lainnya, serta dapat mempermudah proses 
+ujian baik dari sisi peserta ujian maupun tim penilai yang dimana hal ini adalah guru. 
+Penelitian relevan lainnya yang penulis jadikan sebagai acuan penulisan skripsi ini adalah 
+penelitian yang berjudul Aplikasi Perancangan Sistem Penilaian (Ujian) Berbasis Web Di SMP 
+Negeri 4 Kota Solok yang dilakukan oleh (Meri et al., 2022). Penelitian ini juga merancang 
+sistem penilaian ujian dengan berbasis web dengan studi kasus pada SMP Negeri 4 Kota Solok. 
+Penelitian ini dilakukan dengan mempunyai latar belakang yang sama dengan penelitian 
+sebelumnya dimana diharapkan pembuatan sistem penilaian secara digital ini dapat 
+mempermudah proses pemberian nilai setelah dilakukannya ujian atau tes kepada peserta ujian
+
+18 
+ 
+yang juga diharapkan dapat mengurangi penggunaan media kertas dan media lainnya. Dalam 
+penelitian ini, perancangan sistem LMS (Learning Management system) ini menggunakan 
+sebuah CMS yaitu Wordpress. Hasil dari penelitian ini sistem yang dibangun memberikan 
+kemudahan serta manfaat yang cukup signifikan di lingkungan SMP Negeri 4 Kota Solok 
+dimana sistem ini mampu menyelesaikan beberapa permasalahan dalam menginput nilai siswa. 
+Adanya sistem ini menjadikan proses pemberian nilai kepada peserta ujian lebih teratur 
+sehingga pengolahan data lebih mudah dan cepat secara database. Serta adanya sistem ini dapat 
+menjaga keamanan dan keawetan data dari kerusakan maupun kehilangan. 
+ 
+2.15 Kerangka Berpikir 
+Pada penulisan penelitian, kerangka pemikiran adalah jalur yang yang dirancang 
+sedemikian rupa yang berdasarkan kegiatan peneliti dalam melakukan penelitian. Penjelasan 
+peneliti (Ningrum, 2017) dalam penelitiannya menjelaskan bahwa kerangka berpikir 
+merupakan sebuah konsep yang didalamnya berisi relasi antar variabel bebas dan terikat dalam 
+sebuah rangka yang dimana tujuannya memberikan jawaban sementara. Dan untuk konsep 
+pikir penulis dalam menyusun penelitian ini dapat dilihat pada flowchart di bawah ini.
+
+19 
+ 
+ 
+Gambar 2. 2 Skema Kerangka Berpikir 
+ 
+Pada penelitian ini, dalam skema kerangka berpikir pada gambar 2.2 yang telah dibuat 
+penulis akan mengimplementasikan Artificial Intelligence pada sistem "Ujian Online" berbasis 
+web dengan integrasi OpenAI API. Langkah pertama melibatkan analisa sistem ujian 
+konvensional secara general dari literatur jurnal dan analisa kebutuhan sistem. Setelah itu, 
+perancangan sistem dilakukan, termasuk integrasi fitur AI untuk menghasilkan soal 
+menggunakan OpenAI API. Hasil akhirnya adalah sistem ujian online berbasis web yang 
+terintegrasi dengan AI, memungkinkan otomatisasi dalam pembuatan soal ujian.
+
+20 
+ 
+BAB III 
+ANALISIS DAN PERANCANGAN 
+ 
+ 
+Untuk selanjutnya, analisis dan perancangan yang dilakukan dalam penelitian ini 
+menggunakan metode pengembangan agile Extreme Programming dimana metode ini dapat 
+menyesuaikan kebutuhan pengembangan. Metode XP ini bersifat dinamins yang artinya 
+metode dapat menangani perubahan requirement selama perjalanan penelitian ini namun 
+dengan visibilitas yang cukup jelas (Supriyatna & Informatika, 2018). 
+Metode XP memiliki beberapa tahapan dalam prosesnya yaitu: 
+a. Perencanaan (Planning) 
+Berikut adalah tahapan awal dalam melakukan penelitian ini dimana pada tahap ini penulis 
+melakukan pendefinisian kebutuhan yang diperlukan hingga ke output yang akan 
+dihasilkan. 
+b. Perancangan (Design) 
+Tahapan ini merupakan bagian dari perancangan dari aplikasi yang akan dibuat sesuai 
+dengan kebutuhan dan penggunaannya. 
+c. Pengkodingan (Coding) 
+Tahapan coding ini merupakan tahapan penyusunan dan implementasi Bahasa 
+pemrograman hingga membentuk suatu software aplikasi yang digunakan dalam 
+penelitian yang digunakan sebagai pemecahan masalah. Pada penelitian ini penulis 
+menggunakan pemrograman bahasa python dalam proses peintegrasian AI dengan sistem 
+yang dirancang. 
+d. Pengujian (Testing) 
+Tahapan ini merupakan tahapan akhir dimana pada tahapan ini akan menguji aplikasi yang 
+dibangun termasuk didalamnya layanan dan fitur-fitur yang dimasukkan apakah sudah 
+dapat berjalan sesuai dengan yang dirancang sebelumnya sehingga dapat ditarik 
+kesimpulan dari hasil pengujian yang dilakukan. Metode pengujian yang dilakukan dalam 
+penelitian ini juga akan menggunakan metode pengujian black box yang dimana metode 
+ini merupakan salah satu metode pengujian sistem atau aplikasi terkait fungsional interface 
+dari aplikasi yang dibangun. Pengujian menggunakan black box ini guna untuk 
+menemukan apakah dalam aplikasi yang dibangun kemungkinan terdapat beberapa 
+kesalahan yang terjadi contohnya sebagai berikut (Wijaya & Astuti, 2021):
+
+21 
+ 
+1. Adanya fungsi yang tidak sesuai atau hilang 
+2. Kesalahan pada interface 
+3. Kesalahan pada database 
+4. Kesalahan pada kinerja aplikasi 
+ 
+3.1 Analisis Kebutuhan Sistem 
+Analisis terhadap kebutuhan sistem ini dilakukan untuk mendukung proses perancangan 
+sistem akan dibangun yaitu dengan melakukan review sistem. Review sistem itu sendiri 
+dilakukan guna untuk menganalisa aplikasi yang serupa atau yang sudah ada sebelumnya.  
+Flowchart sistem disini akan menjelaskan bagaimana alur Aplikasi yang serupa tersebut 
+dijadikan sebagai acuan penulis untuk mendukung perancangan dan pembuatan aplikasi dalam 
+penelitian ini. Dengan adanya acuan dari sistem yang sudah pernah ada sebelumnya maka akan 
+diketahui kebutuhan apa saja yang diperlukan dalam membangun aplikasi ini dan untuk 
+mengetahui kekurangan atau apa yang perlu dikembangkan dalam aplikasi yang dibangun ini. 
+Hasil dari review sistem yang dilakukan penulis terhadap aplikasi yang serupa dapat dilihat 
+pada Bab II point 2.3.  
+ 
+3.2 FlowChart Sistem dari sistem untuk masing-masing user 
+User dalam sistem yang dirancang ini terdiri dari 2 user yaitu Admin dan Siswa. 
+ 
+Gambar 3. 1 Alur Sistem yang dirancang.
+
+22 
+ 
+Gambar 3.1 menunjukkan diagram alur sistem yang mengilustrasikan interaksi antara 
+tiga aktor utama: Admin, Sistem, dan Siswa dalam sistem ujian online berbasis AI. Proses 
+dimulai dengan setiap aktor melakukan login ke dalam sistem. Admin memiliki beberapa tugas 
+utama, yaitu mengelola data siswa, jadwal ujian, peserta ujian, dan mengganti password. Selain 
+itu, Admin dapat mengunggah materi ujian dan mengelola soal ujian yang akan digunakan 
+dalam ujian. Setelah materi dan soal diunggah, sistem akan menggunakan kecerdasan buatan 
+(AI) untuk menghasilkan soal ujian. Siswa kemudian dapat mengakses jadwal ujian dan 
+mengerjakan ujian yang telah disediakan. Setelah ujian selesai, sistem akan mengelola hasil 
+ujian dan menampilkan hasil tersebut kepada siswa. Siswa dapat melihat hasil ujian mereka 
+melalui akses yang disediakan. Terakhir, seluruh aktor dapat keluar dari sistem dengan 
+menggunakan fitur logout yang tersedia. Diagram ini menggambarkan alur kerja dan interaksi 
+antara setiap komponen dalam sistem ujian online yang efisien dan terstruktur. 
+ 
+3.3 Use Case Diagram 
+Use Case diagram merupakan diagram yang menggambarkan fungsionalitas dari sistem 
+yang dibangun (Gamaliel & Arliyanto, 2021). Pada penelitian ini, use case diagram terdiri dari: 
+a. Satu sistem mencakup suatu sistem e-learning dengan mengintegrasikan e-learning dan 
+ChatGPT dengan bantuan API. 
+b. Terdapat 3 aktor dalam didalam sistem yang dapat mengoperasikan sistem itu sendiri. 3 
+aktor tersebut adalah Guru dan Siswa, dan Admin. 
+c. Terdapat 7 use case di dalam sistem yaitu; Login, Data Siswa, Kelola Soal Ujian, Kelola 
+Peserta Ujian, Materi, Kelola Hasil Ujian, ChatGPT. 
+Untuk lebih jelasnya, usecase diagram dapat dilihat pada gambar di bawah ini.
+
+23 
+ 
+ 
+Gambar 3. 2 Use Case Diagram 
+ 
+Gambar 3.2 ini merupakan use case diagram dari sistem informasi ujian online. Diagram ini 
+menunjukkan berbagai aktor dan interaksi mereka dengan sistem. Terdapat beberapa fungsi 
+utama yang dapat diakses oleh pengguna, dimulai dari login ke dalam sistem. Setelah masuk, 
+pengguna dapat mengelola materi pembelajaran, mengakses data siswa, serta mengelola soal 
+ujian dan jadwal ujian. Sistem juga memungkinkan pengelolaan peserta ujian dan 
+menampilkan hasil ujian setelah ujian selesai dilaksanakan. Selain itu, terdapat fitur untuk 
+mengganti password demi menjaga keamanan akun pengguna, serta opsi untuk keluar dari akun 
+setelah selesai menggunakan sistem. Diagram ini memberikan gambaran komprehensif tentang 
+interaksi antara pengguna dengan sistem, serta fungsi-fungsi yang disediakan untuk 
+mendukung proses administrasi ujian online secara efisien dan terstruktur. 
+3.4 Activity Diagram 
+Activity Diagram menggambarkan berbagai alur aktivitas dari sistem yang dirancang. 
+Bagaimana awal dari masing-masing aktivitas, decision atau pilihan yang mungkin terjadi, 
+sampai dengan bagaimana aktivitas tersebut akan berakhir. Dalam sistem e-learning yang 
+sedang dirancang berikut terdapat beberapa activity diagram pada penelitian ini (Rahadiantino, 
+2022).
+
+24 
+ 
+3.4.1 Activity Diagram Login 
+ 
+Gambar 3. 3 Activity Diagram Login 
+Gambar 3.3 ini merupakan diagram login dari admin ke sistem dimana admin membuka 
+webnya selanjutnya memasukan username dan password, password yang benar langsung 
+masuk ke halaman awal atau dashboard dan password yang salah dikembalikan langsung ke 
+halaman username dan password. 
+3.4.2 Activity Diagram Kelola Data Siswa 
+ 
+Gambar 3. 4 Activity Diagram Kelola data siswa 
+Gambar 3.4 ini merupakan admin masuk ke kelola data siswa lalu admin bisa 
+menambhakan edit, hapus, dan data siswa selanjutnya sistemnya menampilkan data siswa.
+
+25 
+ 
+3.4.3 Activity Diagram Kelola Soal Ujian 
+ 
+Gambar 3. 5 Activity Diagram kelola soal ujian 
+Gambar 3.5 Activity diagram kelola soal ujian admin masuk ke dalam sistem untuk menu 
+kelola soal ujian, admin bisa edit dan hapus soal ujian yang sudah di upload selanjutnya admin 
+dapat generate soal dari AI yang mana nantinya akan menyimpan hasil generate soal.
+
+26 
+ 
+ 
+Gambar 3. 6 Activity Diagram kelola materi 
+Pada Gambar 3.6 terdapat activity diagram yang mana menjelaskan alur dari menu kelola 
+materi yang nantinya bisa untuk menambah, mengedit, menghapus dari materi, serta 
+menampilkan hasil upload materi. 
+ 
+3.4.4 Activity Diagram Kelola Peserta Ujian 
+ 
+Gambar 3. 7 Activity Diagram Kelola Peserta Ujian 
+ 
+Pada Gambar 3.7 terdapat activity diagram untuk kelola peserta ujian. Dimana admin 
+bisa melakukan kelola peserta ujian, yang terdapat fitur menambah, mengedit, menghapus jenis 
+ujian dan peserta ujian.
+
+27 
+ 
+3.4.5 Activity Diagram Hasil Ujian 
+ 
+Gambar 3. 8 Activity Diagram Hasil Ujian 
+ 
+Pada Gambar 3.8 terdapat activity diagram yang mana menjelaskan alur dari menu hasil 
+ujian. Dimana admin dapat melihat hasil ujian dengan menampilkannya, lalu cetak hasil ujian 
+jika sudah selesai. 
+ 
+ 
+Gambar 3. 9 Activity Diagram Ganti Password 
+ 
+Pada Gambar 3.9 terdapat activity diagram yang mana menjelaskan alur dari menu kelola 
+materi yang nantinya bisa untuk menambah, mengedit, menghapus dari materi, serta 
+menampilkan hasil upload materi
+
+28 
+ 
+3.4.6 Activity Diagram LogOut 
+ 
+Gambar 3. 10 Activity Diagram LogOut 
+ 
+Pada Gambar 3.10 Activity Diagram Logout berfungsi untuk admin bisa melakukan 
+Logout atau keluar dari akun, yang mana nantinya halaman akan kembali ke Login. 
+ 
+3.5 Sequence Diagram 
+Sequence diagram merupakan diagram yang menggambarkan skenario yang dinamis 
+yang digunakan untuk mendeskripsikan atau menjelaskan terkait pola komunikasi antar objek. 
+Sequence Diagram ini juga menggambarkan aliran dari “actor” terhadap object yang dituju. 
+Dibawah ini merupakan salah satu contoh sequence diagram untuk user Admin dengan 
+scenario login, Kelola data siswa, dan Kelola soal ujian (Gamaliel & Arliyanto, 2021).
+
+29 
+ 
+3.5.1 Sequence Diagram Login 
+ 
+Gambar 3. 11 Sequence Diagram Login 
+ 
+Gambar 3.11 menunjukkan sequence diagram yang menggambarkan alur proses login pada 
+sistem ujian online berbasis web yang menggunakan integrasi OpenAI API. Proses dimulai 
+ketika aktor (pengguna) memasukkan username dan password pada halaman login (step 1). 
+Data login ini kemudian dikirim ke sistem untuk verifikasi (step 2). Sistem memeriksa 
+kebenaran username dan password yang dimasukkan. Jika valid, sistem akan menampilkan 
+halaman dashboard kepada pengguna (step 3). Namun, jika username atau password tidak 
+valid, sistem akan mengirimkan notifikasi kesalahan kembali ke halaman login yang 
+memberitahukan bahwa username atau password yang dimasukkan tidak valid (step 4). 
+Diagram ini mencerminkan interaksi antara pengguna dan sistem, serta bagaimana sistem 
+menangani validasi login yang merupakan bagian penting dalam memastikan keamanan akses 
+pada sistem ujian online berbasis web.
+
+30 
+ 
+3.5.2 Sequence Diagram Kelola Data Siswa 
+ 
+Gambar 3. 12 Sequence Diagram Data Siswa 
+ 
+Diagram sequence di gambar 3.12 menggambarkan alur pengelolaan data siswa dalam 
+sistem ujian online berbasis web. Aktor utama, pengguna, pertama mengakses menu Data 
+Siswa di halaman utama, kemudian dapat memilih untuk menambah, mengedit, atau 
+menghapus data siswa. Setiap permintaan pengguna dikirim ke sistem untuk diproses. Setelah 
+sistem memproses permintaan tersebut baik menambah, mengedit, atau menghapus data data 
+siswa yang telah diperbarui akan ditampilkan kembali kepada pengguna. Diagram ini 
+menunjukkan interaksi antara pengguna dan sistem dalam pengelolaan data siswa, yang 
+merupakan bagian penting dari implementasi sistem ujian online dengan integrasi OpenAI API. 
+ 
+3.5.3 Sequence Diagram Kelola Soal Ujian 
+ 
+Gambar 3. 13 Sequence Diagram Kelola Soal Ujian
+
+31 
+ 
+Diagram sequence pada gambar 3.13 menggambarkan alur pengelolaan soal ujian dalam 
+sistem ujian online berbasis web. Aktor utama, pengguna, pertama-tama mengakses menu Soal 
+Ujian di halaman utama, kemudian dapat memilih untuk menambah, mengedit, atau 
+menghapus soal ujian. Setiap permintaan pengguna diteruskan ke sistem untuk diproses. 
+Setelah sistem memproses permintaan tersebut—baik menambah, mengedit, atau menghapus 
+soal—data soal ujian yang telah diperbarui akan ditampilkan kembali kepada pengguna. 
+Diagram ini memperlihatkan interaksi antara pengguna dan sistem dalam mengelola soal ujian, 
+yang merupakan bagian penting dari implementasi sistem ujian online dengan integrasi 
+OpenAI API. 
+ 
+ 
+Gambar 3. 14 Sequence Diagram Hasil Ujian 
+ 
+Gambar 3.14 yang ditampilkan merupakan sequence diagram yang menjelaskan alur 
+proses pengambilan hasil ujian dalam sebuah sistem ujian online berbasis web dengan integrasi 
+OpenAI API. Dalam diagram ini, aktor memulai dengan mengakses menu hasil ujian pada 
+halaman hasil ujian. Selanjutnya, halaman hasil ujian mengirimkan permintaan (request) hasil 
+ujian kepada sistem. Sistem kemudian memproses permintaan tersebut dan menampilkan hasil 
+ujian yang diminta. Setelah hasil ujian ditampilkan, halaman hasil ujian mencetak hasil ujian 
+yang telah ditampilkan tersebut. Diagram ini menggambarkan interaksi antara aktor, halaman 
+hasil ujian, sistem, dan proses penampilan hasil ujian secara rinci, yang sangat berguna dalam 
+memahami bagaimana alur kerja sistem ujian online dalam konteks skripsi yang berfokus pada 
+implementasi artificial intelligence pada sistem ujian online berbasis web menggunakan 
+integrasi OpenAI API.
+
+32 
+ 
+3.6 Penerapan Taksonomi Bloom 
+Dalam mengklasifikasikan bentuk-bentuk soal untuk mengevaluasi ranah kognitif 
+peserta ujian penulis menerapkan metode berbasis Revisi Taksonomi Bloom yang 
+dikemukakan oleh (LW et al., 2001). Pada penelitian ini ada empat kategori dalam dimensi 
+pengetahuan kognitif yang penulis terapkan, yaitu pengetahuan faktual, pengetahuan 
+konseptual, pengetahuan prosedural, dan pengetahuan metakognitif. Sementara itu, dalam teori 
+taksonomi bloom ini yang menjadi fokus bagi penulis dalam dimensi proses kognitif, terdapat 
+enam tingkatan, yaitu: mengingat, memahami, mengaplikasikan, menganalisis, mengevaluasi, 
+dan mengkreasi. Enam tingkatan ini umumnya digunakan dalam merumuskan tujuan 
+pembelajaran yang dikenal dengan istilah C1 hingga C6 (Effendi, 2017). 
+3.6.1 Kategori C1 Mengingat (Remembering) 
+Mengingat adalah proses mengambil pengetahuan yang relevan dari memori jangka 
+panjang, yang mencakup mengenali (recognizing) dan mengingat kembali (recalling), yang 
+merupakan tingkat proses kognitif yang paling dasar Bentuk soal dalam kategori ini dapat 
+berupa pilihan ganda mapun esai. Contoh bentuk soal dalam kategori berikut ini berupa: 
+“Sebutkan nama ibu kota provinsi Sulawesi Utara”.  
+Dalam menjawab pertanyaan tersebut peserta ujian akan mengingat nama-nama dari ibu 
+kota setiap provinsi dalam ingatannya yang kemudian menjawab soal tersebut dengan pilihan 
+Kota Manado.  
+3.6.2 Kategori C2 Memahami (Understanding) 
+Memahami adalah kemampuan untuk membuat makna atau pengertian dari informasi 
+dengan mengaitkan informasi baru dengan pengetahuan yang telah dimiliki atau 
+mengintegrasikan informasi baru ke dalam kerangka pengetahuan yang sudah ada dalam 
+pikiran seseorang. Seseorang dikatakan memahami ketika mereka dapat mengonstruksi makna 
+dari pesan instruksional, termasuk dalam bentuk lisan, tertulis, atau grafis, serta materi yang 
+disampaikan. Proses kognitif dalam kategori Memahami melibatkan menafsirkan, memberi 
+contoh, mengklasifikasikan, merangkum, menyimpulkan, membandingkan, dan menjelaskan. 
+Contoh bentuk soal dalam kategori berikut ini berupa: “Jelaskan Mengapa Air memiliki sifat 
+Polar?”.  
+Bentuk soal berikut akan menuntut peserta ujian untuk memberikan penjelasannya 
+tentang alasan mengapa air memiliki sifat polar, dimana sebelumnya siswa diharapkan sudah 
+memahami terkait dengan sifat sifat dari molekul air tersebut. Maka jawaban dalam bentuk soal 
+berikut ini dapat berupa uraian.
+
+33 
+ 
+3.6.3 Kategori C3 Menerapkan (Applying) 
+Menerapkan atau mengaplikasikan, serta menggunakan prosedur untuk melakukan 
+latihan atau menyelesaikan masalah yang berkaitan dengan pengetahuan prosedural. Penerapan 
+ini melibatkan dua jenis proses kognitif, yaitu melaksanakan tugas yang sudah dikenal dan 
+menerapkan tugas-tugas yang belum dikenal. Dalam penelitian ini contoh bentuk soal yang 
+disajikan berupa sebuah kondisi yang kemudian peserta ujian dituntut untuk dapat menerapkan 
+sebuah konsep maupun teori ataupun rumus pasti untuk menjawab pertanyaan tersebut. Contoh 
+soalnya seperti berikut : “Seorang pengendara sepeda motor mengalami percepatan sebesar 2 
+m/s^2. Jika massa sepeda motor besarnya 200 kg, tentukan gaya yang diberikan pada sepeda 
+motor”.  
+Dalam pertanyaan ini, siswa harus menggunakan pengetahuan mereka tentang hukum 
+Newton dalam situasi yang praktis untuk menyelesaikan masalah yang diajukan. Pertanyaan 
+ini mengevaluasi kemampuan peserta ujian dalam menerapkan konsep fisika yang telah 
+dipelajari untuk menyelesaikan masalah yang melibatkan penerapan konsep tersebut. 
+3.6.4 Kategori C4 Menganalisa (Analyzing) 
+Kategori analisis melibatkan memecah permasalahan atau objek menjadi unsur-unsur 
+penyusunnya, serta menilai hubungan antara unsur-unsur penyusun tersebut dengan struktur 
+keseluruhan. Ini juga termasuk dalam proses menganalisis bagian-bagian yang saling terkait. 
+Kategori ini mencakup proses kognitif membedakan, mengorganisasi, dan atribusi. Contoh 
+soal pada kategori berikut adalah: “Identifikasi dan jelaskan fungsi masing-masing organel 
+dalam sel tumbuhan, serta jelaskan bagaimana mereka saling berinteraksi untuk menjaga 
+kelangsungan hidup sel.” 
+Pertanyaan ini mengharuskan siswa untuk menganalisis struktur sel tumbuhan dengan 
+mengenali organel-organel yang ada serta menjelaskan fungsi dari masing-masing organel 
+tersebut. Tidak hanya itu, siswa juga diminta untuk mengevaluasi bagaimana interaksi antara 
+organel-organel tersebut berperan dalam mempertahankan kehidupan sel. Dengan demikian, 
+siswa harus dapat menganalisis komponen-komponen sel tumbuhan dan menghubungkannya 
+dengan fungsi serta interaksi mereka dalam menjaga kelangsungan hidup sel. 
+3.6.5 Kategori C5 Mengevaluasi (Evaluating) 
+Mengevaluasi diartikan sebagai membuat penilaian atau penilaian berdasarkan kriteria 
+dan standar yang telah ditetapkan. Kriteria yang biasanya digunakan meliputi kualitas, 
+efektivitas, efisiensi, dan konsistensi. Standar evaluasi bisa bersifat kuantitatif. Proses 
+mengevaluasi juga mencakup kegiatan kognitif seperti memeriksa dan mengkritisi. Contoh
+
+34 
+ 
+soal untuk kategori berikut berupa: “Berdasarkan pengalaman membaca novel "Laskar 
+Pelangi", bagaimana pendapatmu tentang pesan moral yang disampaikan oleh penulis? Dan 
+berikan penilaian anda terkait pesan moral tersebut yang relevan dengan kondisi social 
+masyarakat saat ini” 
+Bentuk dari pertanyaan diatas meminta peserta ujian untuk menilai pesan moral yang 
+disampaikan dalam novel "Laskar Pelangi" dan relevansinya dengan kondisi sosial masyarakat 
+saat ini. Peserta ujian diharapkan memberikan pendapat berdasarkan pengalaman membaca 
+mereka serta menganalisis pesan moral yang diungkapkan oleh penulis dalam konteks 
+kehidupan sehari-hari. 
+3.6.6 Kategori C6 Menciptakan (Creating) 
+Mengkreasi atau mencipta adalah proses menggabungkan elemen-elemen untuk 
+membentuk kesatuan yang utuh atau fungsional; yaitu, menyusun kembali unsur-unsur ke 
+dalam pola atau struktur yang baru. Ini termasuk dalam menghasilkan gagasan atau hipotesis, 
+merencanakan, dan menghasilkan. Proses kreatif dapat dibagi menjadi tiga fase, yaitu (a) 
+mewakili masalah, (b) merencanakan solusi, dan (c) pelaksanaan solusi. Contoh soal dari 
+kategori berikut dalam pengetahuan fisika adalah sebagai berikut : “Berdasarkan pengetahuan 
+tentang hukum Hooke dan konstanta pegas, temukanlah rumus baru yang dapat menghitung 
+energi potensial pegas (U) dalam suatu pegas yang diberikan gaya tarik (F) dan perpindahan 
+(x). Jelaskan langkah-langkah atau pemikiran Anda dalam menciptakan rumus tersebut dan 
+berikan contoh penerapannya dalam kasus tertentu” 
+Contoh pertanyaan diatas mengajak peserta ujian untuk menerapkan pengetahuan dan 
+pikiran kreatif mereka guna merumuskan rumus baru yang relevan dalam konteks bidang studi 
+yang disajikan. Dengan pemahaman yang kuat terhadap konsep dasar dan proses berpikir yang 
+benar, siswa dapat menciptakan rumus-rumus inovatif yang memperdalam pemahaman mereka 
+dalam bidang studi tersebut.
+
+35 
+ 
+BAB IV 
+HASIL DAN PEMBAHASAN 
+ 
+ 
+4.1 Hasil Implementasi 
+Hasil yang dijelaskan pada bab ini adalah hasil dari perancangan sistem Ujian Online 
+berbasis Web yang diintegrasikan dengan AI menggunakan bantuan OpenAI API yang 
+diharapkan mampu mempermudah user dalam pengelolaan ujian yang dilakukan secara online.  
+4.1.1 Implementasi Halaman Login 
+ 
+Gambar 4. 1 Halaman Login 
+4.1.2 Implementasi Halaman Dashboard 
+ 
+Gambar 4. 2 Halaman Dashboard User Admin 
+Berikut merupakan tampilan halaman Dashboard dimana merupakan menu utama pada 
+aplikasi Ujian Online ini. Pada halaman ini menampikan menu-menu yang dapat diakses oleh 
+user. Contoh pada gambar berikut merupakan tampilan dashboard untuk user “admin”. Menu-
+menu yang dapat diakses oleh user admin antara lain:  
+a. Data Siswa
+
+36 
+ 
+b. Kelola Soal Ujian 
+c. Kelola Peserta Ujian 
+d. Hasil Ujian 
+e. Ganti Password 
+f. Logout / Keluar Akun 
+Dan untuk tampilan dashboard sebagai user “siswa” tampilannya adalah sebagai berikut:  
+ 
+Gambar 4. 3 Halaman Dashboard User Siswa 
+ 
+Menu-menu yang dapat diakses oleh siswa adalah sebagai berikut : 
+a. Jadwal ujian 
+b. Hasil ujian 
+c. Ganti Password 
+d. Logout / Keluar Akun 
+4.1.3 Implementasi Halaman Kelola Materi 
+Untuk halaman atau menu Kelola materi ini hanya dapat diakses oleh user admin dimana 
+aktivitas pada menu ini adalah mengunggah materi yang nantinya akan digunakan sebagai 
+bahan acuan dalam pembuatan soal yang akan degenerate atau dihasilkan oleh bantuan AI. 
+Untuk materi yang dapat diupload pada sistem ini berupa file dengan format .pdf.
+
+37 
+ 
+ 
+Gambar 4. 4 Halaman Kelola Materi 
+ 
+4.1.4 Implementasi Halaman Data Siswa 
+ 
+Gambar 4. 5 Halaman Data Siswa 
+Berikut adalah halaman data siswa yang dapat di akses oleh user: Admin. Pada halaman 
+ini user dapat menambahkan data siswa, juga dapat melihat daftar nama-nama siswa beserta 
+NIS dan Username nya. User admin juga dapat melakukan Edit data ataupun Hapus Data pada 
+fitur “Action”. 
+ 
+4.1.5 Implementasi Halaman Kelola Soal Ujian 
+Pada halaman berikut ini, sebagai user admin dapat mengelola soal ujian. Dimana 
+terdapat beberapa fitur, diantaranya menambahkan soal baru beserta mengisikan kunci 
+jawabannya. Fitur lainnya adalah, admin dapat meng-edit maupun menghapuskan soal ujian 
+yang sudah dibuat.
+
+38 
+ 
+ 
+Gambar 4. 6 Halaman Kelola Soal Ujian 
+ 
+Pada menu inilah penulis menambahkan atau mengintegrasikan AI untuk membantu 
+mengenerate soal-soal ujian yang akan diambil berdasarkan materi-materi yang telah di upload 
+ke sistem pada menu Kelola Materi. Untuk fitur generate soal ini, user admin cukup 
+menginputkan berapa jumlah soal yang diinginkan. Dengan mengintegrasikan AI 
+menggunakan OpenAI API maka secara otomatis sistem akan mengeluarkan hasil generate 
+soal tersebut. Untuk tampilannya dapat dilihat pada gambar di bawah ini, contoh generate soal 
+yang ditampilkan adalah 3 soal sebagai berikut: 
+ 
+Gambar 4. 7 Proses generate soal menggunakan AI 
+Pada menu ini menampilkan fitur “Generate” soal yang menerapkan bantuan AI. 
+Penggunaan fitur berikut adalah dengan mengisi jumlah soal yang ingin dibuat oleh AI yang 
+kemudian user bisa memilih untuk menyimpan atau melakukan re-generate kembali terhadap
+
+39 
+ 
+soal-soal tersebut. Untuk soal yang digenerate oleh AI sendiri diambil berdasarkan materi dari 
+file pdf yang diupload oleh user sebelumnya, hal ini diharapkan AI dapat melakukan generate 
+soal yang relevan dengan bahasan pada materi tersebut. 
+ 
+Gambar 4. 8 Hasil Generate Soal 
+Gambar di atas merupakan hasil dari proses generate soal yang sudah dibahas 
+sebelumnya, dimana sistem mampu menampilkan jumlah soal yang di inputkan untuk di 
+buatkan soal dengan bantuan AI yang dimana juga sudah ditampilkan untuk kunci jawaban 
+yang benar berupa kalimat. Pada gambar yang ditampilkan bentuk soal yang berhasil di 
+generate oleh AI yaitu bentuk soal pilihan ganda dan esai. 
+Pada pembuatan soal ini user juga dapat melakukan pembuatan soal secara manual utnuk 
+soal pilihan ganda maupun soal essai/uraian. untuk tampilannya sebagai berikut :  
+ 
+Gambar 4. 9 Tambah Soal Objektif 
+Pada menu ini, user admin dapat menambahkan soal bentuk pilihan ganda dengan 
+mengisikan kolom-kolom yang sudah tersedia untuk masing-masing fungsi dimana tersedia
+
+40 
+ 
+field untuk diisikan dengan soal dan field lainnya diisikan dengan pilihan jawaban beserta 
+kunci jawaban.  
+Selain bentuk soal pilihan ganda, user juga dapat mengisikan atau menginput secara 
+manual bentuk soal uraian pada sistem ini. Di bawah ini merupakan tampilan menu pada saat 
+user mengakses fitur +Tambah soal untuk type soal Essai. 
+ 
+Gambar 4. 10 Tambah Soal Uraian 
+4.1.6 Implementasi Halaman Kelola Peserta Ujian 
+Pada saat user admin mengakses halaman berikut ini, maka tampilan awal yang akan 
+muncul adalah Informasi Daftar Peserta Ujian. Dimana Informasi tersebut menampilkan table 
+nama siswa , jenis ujian yang diikuti, waktu ujian, durasi ujian, serta status ujian. Status Ujian 
+berikut terbagi atas dua kondisi yaitu ketika siswa belum mengikuti ujian maka pada kolom 
+status akan muncul “Belum Ujian” dan apabila siswa sudah mengikuti ujian maka akan muncul 
+status nya “Selesai Ujian”.  
+User admin juga dapat melakukan penambahan jadwal ujian beserta peserta ujian yang 
+akan mengikuti ujian tersebut dengan mengakses fitur “+ Tambah” pada halaman Daftar 
+Peserta Ujian. Pada halam tersebut admin dapat mengisikan Tanggal Ujian, menentukan jam 
+ujian serta durasinya serta memilih jenis ujian yang terbagi dua, yaitu; UTS Ganjil atau UAS 
+Genap. Admin juga harus memilihkan nama-nama peserta ujian yang dapat mengikuti ujian 
+tersebut.
+
+41 
+ 
+.  
+Gambar 4. 11 Halaman Kelola Peserta Ujian 
+ Selain hal itu, admin juga dapat menambahkan Jenis ujian dengan mengakses sub 
+menu “Data Ujian”. Pada halaman ini admin dapat melakukan aktifitas tambah jenis ujian, 
+hapus jenis ujian ataupun edit jenis ujian. 
+ 
+Gambar 4. 12 Halaman Tambah Jenis Ujian
+
+42 
+ 
+4.1.7 Implementasi Halaman Hasil Ujian 
+ 
+Gambar 4. 13 Halaman Hasil Ujian 
+Pada halaman ini akan menampilkan hasil ujian dari peserta ujian. Dimana Informasi 
+yang ditampilkan adalah nama siswa, nis, tanggal ujian, jam ujian, jenis ujian, jumlah soal yang 
+dijawab benar, jumlah soal yang dijawab salah, serta nilai yang didapatkan. Terdapat fitur cetak 
+atau print out untuk mencetak hasil ujian. Apabila siswa belum mengikuti ujian, maka tidak 
+dapat mencetak hasil ujian dan kolom Informasi akan bertuliskan “Belum Ujian”. 
+ 
+4.1.8 Implementasi Halaman Ganti Password 
+ 
+Gambar 4. 14 Halaman Ganti Password 
+Pada menu ini user dapat mengganti password yang sebelumnya sudah dibuat dengan yang 
+baru. Menu ini dapat diakses oleh user admin dan juga user siswa.
+
+43 
+ 
+4.1.9 Implementasi Halaman Jadwal Ujian 
+ 
+Gambar 4. 15 Halaman Jadwal Ujian untuk user Siswa 
+Menu berikut ini dapat diakses oleh user Siswa dimana pada menu ini menampilkan list 
+atau jadwal-jadwal ujian yang sebelumnya sudah disusun oleh user admin. Pada menu ini 
+menampilkan juga informasi jenis ujian yang akan diikuti oleh peserta, status ujian yang 
+berbeda-beda dimana apabila siswa mengakses sistem ujian online ini sebelum waktu ujian 
+tiba, maka status akan menampilkan keterangan “Menunggu Waktu Ujian”, kondisi kedua 
+adalah jika peserta mengakses aplikasi Ujian Online ini pada saat waktu ujian tiba, maka akan 
+muncul button “mulai ujian” yang kemudian peserta akan langsung diarahkan ke halaman soal 
+ujian. Dan kondisi ketiga adalah, jika peserta telah selesai mengikuti ujian, maka keterangan 
+pada status akan berganti menjadi “Sudah Mengikuti Ujian”. Untuk tampilan pada saat 
+pengisian soal-soal ujian dapat dilihat pada gambar di bawah ini: 
+ 
+Gambar 4. 16 Halaman Soal Ujian 1
+
+44 
+ 
+ 
+Gambar 4. 17 Halaman Soal Ujian 2 
+Pada halaman soal ujian ini juga menampilkan durasi pengerjaan sehingga peserta ujian 
+aware terhadap waktu pengerjaan ujian. Jika sudah selesai menjawab seluruh pertanyaan, maka 
+peserta dapat memilih button “Save” yang kemudian akan mengarahkan peserta pada halaman 
+sebelumnya dan statusnya akan berganti menjadi “Sudah Mengikuti Ujian” seperti gambar di 
+bawah berikut. 
+ 
+Gambar 4. 18 Halaman Setelah Ujian 
+ 
+4.2 Pengujian Black Box 
+Dalam penelitian ini, untuk pengujian fungsionalitas aplikasi penulis mula-mula 
+menentukan skenario uji yang kemudian dari skenario tersebut dilakukan pengujian pada 
+aplikasi. Hal yang diperhatikan adalah apakah aplikasi sudah berjalan sesuai dengan hasil 
+skenario yang diharapkabn atau tidak. Untuk hasil pengujian dapat dilihat pada tabel 4.1 
+Rancangan Test Case.  
+Tabel 4. 1 Rancangan Test Case 
+ID form Pengujian 	Hasil Yang Diinginkan 
+L01 
+Mengisi Username :admin 
+password : admin 	masuk ke halaman dashboard
+
+45 
+ 
+L02 
+Mengisi username : admin  
+password : idam 
+tampil peringatan "Login Gagal!, Maaf, 
+Username dan Password tidak ditemukan" 
+L03 
+mengosongkan username dan 
+password 
+tampil peringatan "username harus diisi" 
+dan "password harus diisi" 
+M01 
+Isi nama materi yang akan di 
+upload pada menu kelola materi 
+dan pilih materi yang akan 
+diupload dan klik save 
+muncul pesan "Selamat, Materi Berhasil 
+Ditambahkan" 
+M02 
+mengosongkan nama materi dan 
+tidak memilih file yang akan 
+diupload > klik button  Simpan 
+muncul peringatan "Please Fill This Field" 
+pada kolom nama materi dan muncul pesan 
+"Please Select A File" pada kolomunggah 
+materi. 
+DS01 
+Pilih "Edit Data" dan "Hapus 
+Data" pada menu Data Siswa 
+untuk melakukan perubahan dan 
+penghapusan data siswa 
+Data siswa dapat diedit informasinya dan 
+data siswa berhasil terhapus 
+DS02 
+Mengosongkan kolom Nama, 
+NIS, Username, Password pada 
+menu Tambah data siswa > klik 
+Simpan 
+muncul pesan "Please Fill This Field" pada 
+setiap kolom yang masih kosong atau tidak 
+terisi 
+SU01 
+mengosongkan  data pada menu + 
+Tambah soal secara manual 
+muncul peringatan "Please Fill This Field" 
+pada kolom Soal, dan kolom pilihan-pilihan 
+jawaban 
+SU02 
+mengisi data pada menu + 
+Tambah soal secara manual 
+muncul pesan "Soal berhasil ditambahkan" 
+dan langsung diarahkan ke menu list soal 
+SU03 
+mengisi jumlah soal pada fitur 
++Generate Soal > simpan 
+tampil hasil generaete soal sebanyak yang 
+diinputkan 
+SU04 
+mengosongkan jumlah soal pada 
+fitur +Generate Soal > klik 
+simpan 
+muncul peringatan "Jumlah soal Harus 
+Diisi!" 
+JU01 Mengisi jenis ujian baru 
+muncul pesan "Jenis Ujian berhasil 
+ditambahkan" 
+JU02 mengosongkan Jenis Ujian Baru muncul peringatan "Please Fill This Field." 
+GP01 
+mengisi password baru : pintar 
+dan mengisi passowrd ulang : 
+pintar pada menu ganti password muncul pesan "Password berhasil diganti" 
+GP02 
+mengisi password baru : pintar 
+dan mengisi passowrd ulang : 
+rapin123 	muncul peringatan "Password tidak Sama" 
+GP03 mengosongkan password baru muncul pesan "please fill this field" 
+ 
+Dengan rancangan test case di atas maka didapatkan hasil pengujian dimana keseluruhan 
+fungsionalitas dari aplikasi yang dibangun ini sudah sesuai dengan apa yang diharapkan. Untuk 
+table hasil pengujian dapat dilihat pada table 4.2 Hasil Pengujian di bawah ini.
+
+46 
+ 
+Tabel 4. 2 Hasil Pengujian 
+ID form Pengujian 	Hasil Yang Diinginkan 	Keterangan 
+L01 
+Mengisi Username :admin 
+password : admin 
+masuk ke halaman dashboard sesuai 
+L02 
+Mengisi username : admin  
+password : idam 
+tampil peringatan "Login Gagal!, Maaf, 
+Username dan Password tidak 
+ditemukan" 
+sesuai 
+L03 
+mengosongkan username dan 
+password 
+tampil peringatan "username harus diisi" 
+dan "password harus diisi" 
+sesuai 
+M01 
+Isi nama materi yang akan di 
+upload pada menu kelola materi 
+dan pilih materi yang akan 
+diupload dan klik save 
+muncul pesan "Selamat, Materi Berhasil 
+Ditambahkan" 
+sesuai 
+M02 
+mengosongkan nama materi dan 
+tidak memilih file yang akan 
+diupload > klik button  Simpan 
+muncul peringatan "Please Fill This 
+Field" pada kolom nama materi dan 
+muncul pesan "Please Select A File" pada 
+kolom unggah materi. 
+sesuai 
+DS01 
+Pilih "Edit Data" dan "Hapus 
+Data" pada menu Data Siswa 
+untuk melakukan perubahan dan 
+penghapusan data siswa 
+Data siswa dapat diedit informasinya dan 
+data siswa berhasil terhapus 
+sesuai 
+DS02 
+Mengosongkan kolom Nama, 
+NIS, Username, Password pada 
+menu Tambah data siswa > klik 
+Simpan 
+muncul pesan "Please Fill This Field" 
+pada setiap kolom yang masih kosong 
+atau tidak terisi 
+sesuai 
+SU01 
+mengosongkan  data pada menu 
++ Tambah soal secara manual 
+muncul peringatan "Please Fill This 
+Field" pada kolom Soal, dan kolom 
+pilihan-pilihan jawaban 
+sesuai 
+SU02 
+mengisi data pada menu + 
+Tambah soal secara manual 
+muncul pesan "Soal berhasil 
+ditambahkan" dan langsung diarahkan ke 
+menu list soal 
+sesuai 
+SU03 
+mengisi jumlah soal pada fitur 
++Generate Soal > simpan 
+tampil hasil generate soal sebanyak yang 
+diinputkan 
+sesuai 
+SU04 
+mengosongkan jumlah soal pada 
+fitur +Generate Soal > klik 
+simpan 
+muncul peringatan "Jumlah soal Harus 
+Diisi!" 
+sesuai 
+JU01 Mengisi jenis ujian baru 
+muncul pesan "Jenis Ujian berhasil 
+ditambahkan" 
+sesuai 
+JU02 mengosongkan Jenis Ujian Baru 
+muncul peringatan "Please Fill This 
+Field." 
+sesuai 
+GP01 
+mengisi password baru : pintar 
+dan mengisi password ulang : 
+pintar pada menu ganti password 
+muncul pesan "Password berhasil 
+diganti" 
+sesuai 
+GP02 
+mengisi password baru : pintar 
+dan mengisi password ulang : 
+rapin123 
+muncul peringatan "Password tidak 
+Sama" 
+sesuai 
+GP03 mengosongkan password baru muncul pesan "please fill this field" sesuai
+
+47 
+ 
+Dengan hasil pengujian di atas maka dapat dinyatakan bahwa sistem aplikasi Ujian 
+Online yang dirancang ini sudah sesuai dan layak untuk dipergunakan oleh user.
+
+48 
+ 
+BAB V 
+PENUTUP 
+ 
+ 
+5.1 Kesimpulan 
+Dari keseluruhan penelitian yang telah penulis lakukan, maka kesimpulan yang dapat 
+penulis berikan adalah sebagai berikut: 
+a. Penerapam AI dalam pembuatan sistem ujian online yang disusun oleh penulis berikut 
+memberikan hasil dimana AI mempermudah pekerjaan dari aspek pendidik dalam 
+menjalankan ujian dimana bentuk soal yang dihasilkan berupa 2 tipe yaitu soal objektif 
+dan soal uraian yang dimana proses generating soal tersebut berlandaskan metode 
+Taksonomi Bloom. 
+b. Pembuatan sistem aplikasi Ujian Online berikut ini memudahkan penguji untuk mengolah 
+hasil ujian peserta setelah mengikuti ujian. Dimana perhitungan nilai sudah otomatis 
+diproses oleh sistem sehingga mengurangi kecenderungan kesalahan pemberian nilai pada 
+peserta ujian. 
+c. Dengan sistem Ujian Online seperti ini maka dapat mengurangi pemakaian media cetak 
+berupa kertas untuk soal dan lembar jawaban peserta.  
+ 
+5.2 Saran 
+Adapun saran yang dapat penulis berikan untuk Aplikasi Ujian Online berbasis Web 
+berikut ini adalah diharapkan penelitian selanjutnya dapat mengembangkan aplikasi berikut 
+dengan menambahkan beberapa fitur sehingga menghasilkan aplikasi yang lebih efisien. 
+Selanjutnya, diharapkan pada penelitian selanjutnya dapat mengembangkan aplikasi ini sampai 
+pada proses maintenance sistem dan pengembangan pada platform yang berbeda seperti dapat 
+diakses pada sistem mobile android sehingga dapat diakses dengan lebih mudah.
+
+49 
+ 
+DAFTAR PUSTAKA 
+ 
+ 
+Anderson, L. W., Krathwohl, D., Airasian, P., Cruikshank, K. A., Mayer, R. E., Pintrich, P., 
+Raths, J., & Wittrock, M. C. (2024). A Taxonomy for Learning, Teaching, and Assessing: 
+A Revision of Bloom’s Taxonomy of Educational Objectives. Educational Horizons, 
+83(3), 154–159. http://www.jstor.org/stable/42926529 
+Arthur, R., Pd, M., Marzuq, A., Pd, M., & Pengukuran, A. K. (2009). PENGUKURAN 
+MENGGUNAKAN TES OBJEKTIF . 1–18. 
+Effendi, R. (2017). Konsep Revisi Taksonomi Bloom Dan Implementasinya  Pada Pelajaran 
+Matematika Smp. JIPMat, 2(1). https://doi.org/10.26877/jipmat.v2i1.1483 
+Gamaliel, F., & Arliyanto, P. Y. D. (2021). Perancangan Aplikasi Ujian Online Berbasis 
+Website. Jurnal Manajamen Informatika Jayakarta , 1(4), 270. 
+https://doi.org/10.52362/jmijayakarta.v1i4.503 
+Irian, & Yudhistira, Y. (2021). Implementasi Application Programming Interface(API) Kawal 
+Corona Sebagai Media Informasi Pandemik Covid-19 Berbasis Android. Jurnal Sistem 
+Informasi Dan Teknologi Peradaban (JSITP), 2(1), 22–29. www.journal.peradaban.ac.id 
+Jamaluddin, M., Yuniarti, N., Rahmani, A., & Hutahaean, J. (2020). Aplikasi Penilaian 
+Otomatis Ujian Esai Berbahasa Indonesia Menggunakan Algoritma K-Nearest Neighbor 
+( Studi kasus MAN Cimahi ). Prosiding Industrial Research Workshop and National 
+Seminar, 10(August 2019), 314–324. https://doi.org/10.35313/irwns.v10i1.1404 
+Lumbantobing, L. R. (2021). Kelebihan dan Keterbatasan dari Bentuk-Bentuk Penilaian Tes 
+Tertulis. Kemenkeu Learning Center	, 1 –2. 
+https://klc2.kemenkeu.go.id/kms/knowledge/kelebihan-keterbatasan-penilaian-tes-
+tertulis-0f81178c/detail/ 
+LW, A., DR, K., PW, A., KA, C., Mayer, R. E., PR, P., Raths, J., & mc. (2001). Anderson and 
+Krathwohl Bloom ’ s Taxonomy Revised. 
+Meri, R., Lestari, S., & Putra, A. (2022). Aplikasi Perancangan Sistem Penilaian (Ujian) 
+Berbasis Web Di SMP Negeri 4 Kota Solok. Brahmana : Jurnal Penerapan Kecerdasan 
+Buatan, 4(1), 81–88. https://tunasbangsa.ac.id/pkm/index.php/brahmana/article/view/137 
+Ningrum, N. (2017). Pengaruh Penggunaan Metode Berbasis Pemecahan Masalah (Problem 
+Solving) Terhadap Hasil Belajar Ekonomi Siswa Kelas X Semester Genap Man 1 Metro 
+Tahun Pelajaran 2016/2017. PROMOSI (Jurnal Pendidikan Ekonomi), 5(2), 145–151.
+
+50 
+ 
+https://doi.org/10.24127/ja.v5i2.1224 
+Palasara, N., Sinnun, A., & Tabrani, M. (2019). Penerapan Metode Waterfall Pada Sistem 
+Informasi Manajemen Buku Perpustakaan Berbasis Web. Jurnal SAINTEKOM, 9(1), 83. 
+https://doi.org/10.33020/saintekom.v9i1.84 
+Rahadiantino, L. (2022). Implementasi Pembelajaran Artificial Intelligence Bagi Siswa 
+Sekolah Dasar di Kota Batu, Malang, Jawa Timur. Jurnal Inovasi Pendidikan Dan 
+Pembelajaran Sekolah Dasar, 6(1). https://doi.org/10.24036/jippsd.v6i1.115857 
+Septiani, N. A., & Habibie, F. Y. (2022). Penggunaan Metode Extreme Programming Pada 
+Perancangan Sistem Informasi Pelayanan Publik . 3, 341–349. 
+https://doi.org/10.30865/json.v3i3.3931 
+Serdianus, S., & Saputra, T. (2023). Peran Artificial Intelligence Chatgpt Dalam Perencanaan 
+Pembelajaran Di Era Revolusi Industri 4.0. Masokan: Ilmu Sosial Dan Pendidikan, 3(1), 
+1–18. https://doi.org/10.34307/misp.v3i1.100 
+Shidiq, M. (2023). the Use of Artificial Intelligence-Based Chat-Gpt and Its Challenges for the 
+World of Education; From the Viewpoint of the Development of Creative Writing Skills. 
+Society and Humanity, 01(01), 2023. 
+Sumartini, A., Pawarti, M., & Afandi. (2022). PENERAPAN TAKSONOMI DIGITAL BLOOM 
+PADA MASA BELAJAR DI RUMAH OLEH GURU SMK DI KALIMANTAN BARAT . 3(8), 
+748–760. 
+Supriyatna, A., & Informatika, M. (2018). METODE EXTREME PROGRAMMING PADA 
+PEMBANGUNAN WEB APLIKASI SELEKSI PESERTA PELATIHAN KERJA . 11(1), 1–
+18. 
+Taufiq, A. U. (2015). Pengembangan Tes Kognitif Berbasis Revisi Taksonomi Bloom Pada 
+Materi Sistem Reproduksi Untuk Siswa Sma. Jurnal Biotek, 3(2), 1–17. 
+Wangsanegara, N. K., & Subaeki, B. (2015). Implementasi Natural Language Processing 
+Dalam Pengukuran Ketepatan Ejaan Yang Disempurnakan (Eyd) Pada Abstrak Skripsi 
+Menggunakan Algoritma Fuzzy Logic. Jurnal Teknik Informatika, 8(2). 
+https://doi.org/10.15408/jti.v8i2.3185 
+Wijaya, Y. D., & Astuti, M. W. (2021). Pengujian Blackbox Sistem Informasi Penilaian 
+Kinerja Karyawan Pt Inka (Persero) Berbasis Equivalence Partitions. Jurnal Digital 
+Teknologi Informasi, 4(1), 22. https://doi.org/10.32502/digital.v4i1.3163 
+ 
+Anderson, L. W., Krathwohl, D., Airasian, P., Cruikshank, K. A., Mayer, R. E., Pintrich, P.,
+
+51 
+ 
+Raths, J., & Wittrock, M. C. (2024). A Taxonomy for Learning, Teaching, and Assessing: 
+A Revision of Bloom’s Taxonomy of Educational Objectives. Educational Horizons, 
+83(3), 154–159. http://www.jstor.org/stable/42926529 
+Arthur, R., Pd, M., Marzuq, A., Pd, M., & Pengukuran, A. K. (2009). PENGUKURAN 
+MENGGUNAKAN TES OBJEKTIF . 1–18. 
+Effendi, R. (2017). Konsep Revisi Taksonomi Bloom Dan Implementasinya  Pada Pelajaran 
+Matematika Smp. JIPMat, 2(1). https://doi.org/10.26877/jipmat.v2i1.1483 
+Gamaliel, F., & Arliyanto, P. Y. D. (2021). Perancangan Aplikasi Ujian Online Berbasis 
+Website. Jurnal Manajamen Informatika Jayakarta , 1(4), 270. 
+https://doi.org/10.52362/jmijayakarta.v1i4.503 
+Irian, & Yudhistira, Y. (2021). Implementasi Application Programming Interface(API) Kawal 
+Corona Sebagai Media Informasi Pandemik Covid-19 Berbasis Android. Jurnal Sistem 
+Informasi Dan Teknologi Peradaban (JSITP), 2(1), 22–29. www.journal.peradaban.ac.id 
+Jamaluddin, M., Yuniarti, N., Rahmani, A., & Hutahaean, J. (2020). Aplikasi Penilaian 
+Otomatis Ujian Esai Berbahasa Indonesia Menggunakan Algoritma K-Nearest Neighbor 
+( Studi kasus MAN Cimahi ). Prosiding Industrial Research Workshop and National 
+Seminar, 10(August 2019), 314–324. https://doi.org/10.35313/irwns.v10i1.1404 
+Lumbantobing, L. R. (2021). Kelebihan dan Keterbatasan dari Bentuk-Bentuk Penilaian Tes 
+Tertulis. Kemenkeu Learning Center	, 1 –2. 
+https://klc2.kemenkeu.go.id/kms/knowledge/kelebihan-keterbatasan-penilaian-tes-
+tertulis-0f81178c/detail/ 
+LW, A., DR, K., PW, A., KA, C., Mayer, R. E., PR, P., Raths, J., & mc. (2001). Anderson and 
+Krathwohl Bloom ’ s Taxonomy Revised. 
+Meri, R., Lestari, S., & Putra, A. (2022). Aplikasi Perancangan Sistem Penilaian (Ujian) 
+Berbasis Web Di SMP Negeri 4 Kota Solok. Brahmana : Jurnal Penerapan Kecerdasan 
+Buatan, 4(1), 81–88. https://tunasbangsa.ac.id/pkm/index.php/brahmana/article/view/137 
+Ningrum, N. (2017). Pengaruh Penggunaan Metode Berbasis Pemecahan Masalah (Problem 
+Solving) Terhadap Hasil Belajar Ekonomi Siswa Kelas X Semester Genap Man 1 Metro 
+Tahun Pelajaran 2016/2017. PROMOSI (Jurnal Pendidikan Ekonomi), 5(2), 145–151. 
+https://doi.org/10.24127/ja.v5i2.1224 
+Palasara, N., Sinnun, A., & Tabrani, M. (2019). Penerapan Metode Waterfall Pada Sistem 
+Informasi Manajemen Buku Perpustakaan Berbasis Web. Jurnal SAINTEKOM, 9(1), 83. 
+https://doi.org/10.33020/saintekom.v9i1.84
+
+52 
+ 
+Rahadiantino, L. (2022). Implementasi Pembelajaran Artificial Intelligence Bagi Siswa 
+Sekolah Dasar di Kota Batu, Malang, Jawa Timur. Jurnal Inovasi Pendidikan Dan 
+Pembelajaran Sekolah Dasar, 6(1). https://doi.org/10.24036/jippsd.v6i1.115857 
+Septiani, N. A., & Habibie, F. Y. (2022). Penggunaan Metode Extreme Programming Pada 
+Perancangan Sistem Informasi Pelayanan Publik . 3, 341–349. 
+https://doi.org/10.30865/json.v3i3.3931 
+Serdianus, S., & Saputra, T. (2023). Peran Artificial Intelligence Chatgpt Dalam Perencanaan 
+Pembelajaran Di Era Revolusi Industri 4.0. Masokan: Ilmu Sosial Dan Pendidikan, 3(1), 
+1–18. https://doi.org/10.34307/misp.v3i1.100 
+Shidiq, M. (2023). the Use of Artificial Intelligence-Based Chat-Gpt and Its Challenges for the 
+World of Education; From the Viewpoint of the Development of Creative Writing Skills. 
+Society and Humanity, 01(01), 2023. 
+Sumartini, A., Pawarti, M., & Afandi. (2022). PENERAPAN TAKSONOMI DIGITAL BLOOM 
+PADA MASA BELAJAR DI RUMAH OLEH GURU SMK DI KALIMANTAN BARAT . 3(8), 
+748–760. 
+Supriyatna, A., & Informatika, M. (2018). METODE EXTREME PROGRAMMING PADA 
+PEMBANGUNAN WEB APLIKASI SELEKSI PESERTA PELATIHAN KERJA . 11(1), 1–
+18. 
+Taufiq, A. U. (2015). Pengembangan Tes Kognitif Berbasis Revisi Taksonomi Bloom Pada 
+Materi Sistem Reproduksi Untuk Siswa Sma. Jurnal Biotek, 3(2), 1–17. 
+Wangsanegara, N. K., & Subaeki, B. (2015). Implementasi Natural Language Processing 
+Dalam Pengukuran Ketepatan Ejaan Yang Disempurnakan (Eyd) Pada Abstrak Skripsi 
+Menggunakan Algoritma Fuzzy Logic. Jurnal Teknik Informatika, 8(2). 
+https://doi.org/10.15408/jti.v8i2.3185 
+Wijaya, Y. D., & Astuti, M. W. (2021). Pengujian Blackbox Sistem Informasi Penilaian 
+Kinerja Karyawan Pt Inka (Persero) Berbasis Equivalence Partitions. Jurnal Digital 
+Teknologi Informasi, 4(1), 22. https://doi.org/10.32502/digital.v4i1.3163 
+Sutabri, T. (2012). Analisis Sistem Informasi (Edisi 1). CV ANDI OFFSET (Penerbit Andi). 
+Muda, I. (2017). SISTEM INFORMASI AKUNTANSI (Edisi 1). PENERBIT MADENATERA.
+
+53
+
+LAMPIRAN 
+ 
+Lampiran tidak perlu diberi nomor halaman. Dokumen apa saja yang dimasukkan dalam 
+lampiran cukup diberi judul dengan kata ‘LAMPIRAN’ yang dilanjutkan dengan huruf abjad 
+besar untuk penomoran. Cukup judul ‘LAMPIRAN’ saja yang dimasukkan dalam daftar isi. 
+Judul-judul lampiran, seperti Lampiran A, Lampiran B dan seterusnya, tidak perlu dimasukkan 
+dalam daftar isi.
+			=========================== Materi Lainnya ================================
+			

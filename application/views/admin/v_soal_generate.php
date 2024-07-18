@@ -102,7 +102,7 @@ $this->load->view('admin/js');
 						setTimeout(function () {
 							$("#btn-generate").html('<span class="fa fa-refresh"></span> Generate');
 
-						}, 100000000000000000);
+						}, 1000);
 						$('#data_table').show();
 					},
 					error: function (xhr, status, error) {
